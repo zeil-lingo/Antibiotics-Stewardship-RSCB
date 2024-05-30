@@ -191,260 +191,106 @@
         <thead>
             <tr>
                 <th>Antimikroba</th>
-                <th>Keterangan</th>
-                <th>Stop Tanggal</th>
-                <th>Lama Pemakaian</th>
+                <th>Ya</th>
+                <th>Tidak</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><input type="text" class="form-control" name="antimikroba_1"></td>
-                <td><input type="text" class="form-control" name="keterangan_1"></td>
-                <td><input type="date" class="form-control" name="stop_tanggal_1"></td>
-                <td><input type="text" class="form-control" name="lama_pemakaian_1"></td>
+                <td>Ampisilin/Sulbaktam</td>
+                <td><input type="checkbox" class="form-check-input" name="amp_sul" value="Ya"></td>
+                <td><input type="checkbox" class="form-check-input" name="amp_sul" value="Tidak"></td>
             </tr>
             <tr>
-                <td><input type="text" class="form-control" name="antimikroba_2"></td>
-                <td><input type="text" class="form-control" name="keterangan_2"></td>
-                <td><input type="date" class="form-control" name="stop_tanggal_2"></td>
-                <td><input type="text" class="form-control" name="lama_pemakaian_2"></td>
+                <td>Levofloksasin</td>
+                <td><input type="checkbox" class="form-check-input" name="levo" value="Ya"></td>
+                <td><input type="checkbox" class="form-check-input" name="levo" value="Tidak"></td>
             </tr>
             <tr>
-                <td><input type="text" class="form-control" name="antimikroba_3"></td>
-                <td><input type="text" class="form-control" name="keterangan_3"></td>
-                <td><input type="date" class="form-control" name="stop_tanggal_3"></td>
-                <td><input type="text" class="form-control" name="lama_pemakaian_3"></td>
+                <td>Siprofloksasin</td>
+                <td><input type="checkbox" class="form-check-input" name="cipro" value="Ya"></td>
+                <td><input type="checkbox" class="form-check-input" name="cipro" value="Tidak"></td>
+            </tr>
+            <tr>
+                <td>Kotrimoksazol</td>
+                <td><input type="checkbox" class="form-check-input" name="kotrim" value="Ya"></td>
+                <td><input type="checkbox" class="form-check-input" name="kotrim" value="Tidak"></td>
+            </tr>
+            <tr>
+                <td>Meropenem</td>
+                <td><input type="checkbox" class="form-check-input" name="mero" value="Ya"></td>
+                <td><input type="checkbox" class="form-check-input" name="mero" value="Tidak"></td>
+            </tr>
+            <tr>
+                <td>Kolistin</td>
+                <td><input type="checkbox" class="form-check-input" name="kolis" value="Ya"></td>
+                <td><input type="checkbox" class="form-check-input" name="kolis" value="Tidak"></td>
+            </tr>
+            <tr>
+                <td>Vankomisin</td>
+                <td><input type="checkbox" class="form-check-input" name="vanko" value="Ya"></td>
+                <td><input type="checkbox" class="form-check-input" name="vanko" value="Tidak"></td>
+            </tr>
+            <tr>
+                <td>Tigesiklin</td>
+                <td><input type="checkbox" class="form-check-input" name="tiges" value="Ya"></td>
+                <td><input type="checkbox" class="form-check-input" name="tiges" value="Tidak"></td>
             </tr>
         </tbody>
     </table>
     
-    <h4>Permintaan Antimikroba</h4>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th></th>
-                <th>Antimikroba 1</th>
-                <th>Antimikroba 2</th>
-                <th>Antimikroba 3</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Nama Antimikroba</td>
-                <td><input type="text" class="form-control" name="nama_antimikroba_1"></td>
-                <td><input type="text" class="form-control" name="nama_antimikroba_2"></td>
-                <td><input type="text" class="form-control" name="nama_antimikroba_3"></td>
-            </tr>
-            <tr>
-                <td>Regimen (Dosis / cara / saat / lama)</td>
-                <td><input type="text" class="form-control" name="regimen_1"></td>
-                <td><input type="text" class="form-control" name="regimen_2"></td>
-                <td><input type="text" class="form-control" name="regimen_3"></td>
-            </tr>
-            <tr>
-                <td>Indikasi</td>
-                <td><input type="text" class="form-control" name="indikasi_1"></td>
-                <td><input type="text" class="form-control" name="indikasi_2"></td>
-                <td><input type="text" class="form-control" name="indikasi_3"></td>
-            </tr>
-            <tr>
-                <td>Alasan Pemberian</td>
-                <td><input type="text" class="form-control" name="alasan_pemberian_1"></td>
-                <td><input type="text" class="form-control" name="alasan_pemberian_2"></td>
-                <td><input type="text" class="form-control" name="alasan_pemberian_3"></td>
-            </tr>
-        </tbody>
-    </table>
-    
-    <h4>Laboratorium Mikrobiologi saat ini</h4>
     <div class="form-group">
-        <label>Hasil Kultur:</label><br>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="hasil_kultur" value="Ada">
-            <label class="form-check-label">Ada, lampirkan copy hasil kultur</label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="hasil_kultur" value="Tidak Ada">
-            <label class="form-check-label">Tidak Ada</label>
-        </div>
+        <label>Diagnosa saat ini:</label>
+        <textarea class="form-control" name="diagnosa_saat_ini"></textarea>
     </div>
     
     <div class="form-group">
-        <label>Dikirim tanggal:</label>
-        <input type="date" class="form-control" name="dikirim_tanggal">
+        <label>Pemeriksaan laboratorium:</label>
+        <textarea class="form-control" name="pemeriksaan_lab"></textarea>
     </div>
     
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Tanggal Kultur</th>
-                <th>Spesimen</th>
-                <th>Hasil</th>
-                <th>Resisten / Intermediate / Sensitif</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><input type="date" class="form-control" name="tanggal_kultur_1"></td>
-                <td><input type="text" class="form-control" name="spesimen_1"></td>
-                <td><input type="text" class="form-control" name="hasil_1"></td>
-                <td><input type="text" class="form-control" name="ris_1"></td>
-            </tr>
-            <tr>
-                <td><input type="date" class="form-control" name="tanggal_kultur_2"></td>
-                <td><input type="text" class="form-control" name="spesimen_2"></td>
-                <td><input type="text" class="form-control" name="hasil_2"></td>
-                <td><input type="text" class="form-control" name="ris_2"></td>
-            </tr>
-            <tr>
-                <td><input type="date" class="form-control" name="tanggal_kultur_3"></td>
-                <td><input type="text" class="form-control" name="spesimen_3"></td>
-                <td><input type="text" class="form-control" name="hasil_3"></td>
-                <td><input type="text" class="form-control" name="ris_3"></td>
-            </tr>
-        </tbody>
-    </table>
-    
-    <h4>Hasil Laboratorium</h4>
-    <div class="table-responsive"
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Pemeriksaan</th>
-                <th>Tanggal</th>
-                <th>Tanggal</th>
-                <th>Tanggal</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Darah Lengkap</td>
-                <td><input type="date" class="form-control" name="darah_lengkap_1"></td>
-                <td><input type="date" class="form-control" name="darah_lengkap_2"></td>
-                <td><input type="date" class="form-control" name="darah_lengkap_3"></td>
-            </tr>
-            <tr>
-                <td>Urine Lengkap</td>
-                <td><input type="date" class="form-control" name="urine_lengkap_1"></td>
-                <td><input type="date" class="form-control" name="urine_lengkap_2"></td>
-                <td><input type="date" class="form-control" name="urine_lengkap_3"></td>
-            </tr>
-            <tr>
-                <td>CRP</td>
-                <td><input type="date" class="form-control" name="crp_1"></td>
-                <td><input type="date" class="form-control" name="crp_2"></td>
-                <td><input type="date" class="form-control" name="crp_3"></td>
-            </tr>
-            <tr>
-                <td>Procalcitonin</td>
-                <td><input type="date" class="form-control" name="procalcitonin_1"></td>
-                <td><input type="date" class="form-control" name="procalcitonin_2"></td>
-                <td><input type="date" class="form-control" name="procalcitonin_3"></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="form-group">
+        <label>Terapi:</label>
+        <textarea class="form-control" name="terapi"></textarea>
     </div>
     
-    <h4>Hasil Pemeriksaan Radiologi / Penunjang lain</h4>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Pemeriksaan</th>
-                <th>Tanggal</th>
-                <th>Hasil</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><input type="text" class="form-control" name="pemeriksaan_radiologi_1"></td>
-                <td><input type="date" class="form-control" name="tanggal_radiologi_1"></td>
-                <td><input type="text" class="form-control" name="hasil_radiologi_1"></td>
-            </tr>
-            <tr>
-                <td><input type="text" class="form-control" name="pemeriksaan_radiologi_2"></td>
-                <td><input type="date" class="form-control" name="tanggal_radiologi_2"></td>
-                <td><input type="text" class="form-control" name="hasil_radiologi_2"></td>
-            </tr>
-            <tr>
-                <td><input type="text" class="form-control" name="pemeriksaan_radiologi_3"></td>
-                <td><input type="date" class="form-control" name="tanggal_radiologi_3"></td>
-                <td><input type="text" class="form-control" name="hasil_radiologi_3"></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="form-group">
+        <label>Tanggal Berobat:</label>
+        <input type="date" class="form-control" name="tanggal_berobat">
+    </div>
     
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="form-group">
+        <label>Catatan Tambahan:</label>
+        <textarea class="form-control" name="catatan_tambahan"></textarea>
+    </div>
+    
+    <div class="form-group center">
+        <button type="submit" class="btn btn-primary">Kirim</button>
+    </div>
 </form>
 
-</div>
-</div>
-
-<!-- Bootstrap JS and dependencies -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js></script>
-
-<!-- Custom JS for form validation -->
-
 <script>
-      document.getElementById("antimikrobaForm").addEventListener("submit", function (e) {
-        e.preventDefault(); // Prevent the default form submission
-        document.getElementById("message").textContent = "Submitting..";
-        document.getElementById("message").style.display = "block";
-        document.getElementById("submit-button").disabled = true;
+document.getElementById('antimikrobaForm').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-        // Collect the form data
-        var formData = new FormData(this);
-        var keyValuePairs = [];
-        for (var pair of formData.entries()) {
-          keyValuePairs.push(pair[0] + "=" + pair[1]);
-        }
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwoHFADZLLZzHLY68uOzXusTf8R9t8N2pTgWvnoL8TUm0JtAGcOdWdkTtXkQqOwFXv0/exec';
+    const form = document.getElementById('antimikrobaForm');
+    const formData = new FormData(form);
 
-        var formDataString = keyValuePairs.join("&");
-
-        // Send a POST request to your Google Apps Script
-        fetch(
-          "https://script.google.com/macros/s/AKfycbxKMzkZjLbn0o0xgIztMOK1Xrm9xCGqmO1vsSv5qKzr3IgWl8otNM0Smd_g3RT8_Pmt/exec",
-          {
-            redirect: "follow",
-            method: "POST",
-            body: formDataString,
-            headers: {
-              "Content-Type": "text/plain;charset=utf-8",
-            },
-          }
-        )
-          .then(function (response) {
-            // Check if the request was successful
-            if (response) {
-              return response; // Assuming your script returns JSON response
-            } else {
-              throw new Error("Failed to submit the form.");
-            }
-          })
-          .then(function (data) {
-            // Display a success message
-            document.getElementById("message").textContent =
-              "Data submitted successfully!";
-            document.getElementById("message").style.display = "block";
-            document.getElementById("message").style.backgroundColor = "green";
-            document.getElementById("message").style.color = "beige";
-            document.getElementById("submit-button").disabled = false;
-            document.getElementById("form").reset();
-
-            setTimeout(function () {
-              document.getElementById("message").textContent = "";
-              document.getElementById("message").style.display = "none";
-            }, 2600);
-          })
-          .catch(function (error) {
-            // Handle errors, you can display an error message here
-            console.error(error);
-            document.getElementById("message").textContent =
-              "An error occurred while submitting the form.";
-            document.getElementById("message").style.display = "block";
-          });
-      });
-    </script>
+    fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => response.json())
+        .then(data => {
+            alert('Form submission successful');
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            alert('Form submission failed');
+            console.error('Error:', error);
+        });
+});
+</script>
+    </div>
+</div>
 
 </body>
 </html>
