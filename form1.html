@@ -18,98 +18,110 @@
       </div>
     </section>
     <form id="form" class="container m-4 pl-4" method="POST">
-      <div class="field">
-        <label class="label">DPJP</label>
-        <div class="control">
-          <input
-            class="input"
-            type="text"
-            placeholder="Your Client Name"
-            name="nama_dpjp"
-          />
-        </div>
-      </div>
+<div class="field">
+    <label class="label">Nama DPJP:</label>
+    <div class="control">
+        <input type="text" class="input" name="nama_dpjp" required>
+    </div>
+</div>
 
-      <!-- <div class="field">
-        <label class="label">Last Name</label>
-        <div class="control">
-          <input
-            class="input"
-            type="text"
-            placeholder="Your Last Name"
-            name="Last Name"
-          />
-        </div>
-      </div> -->
+<div class="field">
+    <label class="label">Nama Pasien:</label>
+    <div class="control">
+        <input type="text" class="input" name="nama_pasien" required>
+    </div>
+</div>
 
-      <div class="field">
-        <label class="label">Email</label>
-        <div class="control">
-          <input
-            class="input"
-            type="email"
-            placeholder="Your Email"
-            name="Email"
-          />
-        </div>
-      </div>
+<div class="field">
+    <label class="label">Ruangan:</label>
+    <div class="control">
+        <input type="text" class="input" name="ruangan">
+    </div>
+</div>
 
-      <div class="field">
-        <label class="label">Password</label>
-        <div class="control">
-          <input
-            class="input"
-            type="password"
-            placeholder="Your Password"
-            name="Password"
-          />
-        </div>
-      </div>
+<div class="field">
+    <label class="label">No. Rekam Medis:</label>
+    <div class="control">
+        <input type="text" class="input" name="no_rekam_medis">
+    </div>
+</div>
 
-      <div class="field">
-        <label class="label">Date of Birth</label>
-        <div class="control">
-          <input
-            class="input"
-            type="date"
-            placeholder="Your Date of Birth"
-            name="DOB"
-          />
-        </div>
-      </div>
+<div class="field">
+    <label class="label">Tanggal Lahir:</label>
+    <div class="control">
+        <input type="date" class="input" name="tanggal_lahir">
+    </div>
+</div>
 
-      <div class="field">
-        <label class="label">Gender</label>
-        <div class="control">
-          <label class="radio">
-            <input type="radio" name="Gender" value="male" /> Male
-          </label>
-          <label class="radio">
-            <input type="radio" name="Gender" value="female" /> Female
-          </label>
-        </div>
-      </div>
+<div class="field">
+    <label class="label">Jenis Kelamin:</label>
+    <div class="control">
+        <label class="radio">
+            <input type="radio" name="jenis_kelamin" value="L" required> L
+        </label>
+        <label class="radio">
+            <input type="radio" name="jenis_kelamin" value="P" required> P
+        </label>
+    </div>
+</div>
 
-      <div class="field">
-        <label class="label">Agree to Terms</label>
-        <div class="control">
-          <label class="checkbox">
-            <input type="checkbox" name="Agree To Terms" value="yes" /> I agree
-            to the terms and conditions
-          </label>
-        </div>
-      </div>
+<div class="field">
+    <label class="label">Berat Badan:</label>
+    <div class="control">
+        <input type="number" class="input" name="berat_badan" step="0.1"> Kg
+    </div>
+</div>
 
-      <div class="field">
-        <label class="label">Additional Information</label>
-        <div class="control">
-          <textarea
-            class="textarea"
-            placeholder="Any additional information"
-            name="Notes"
-          ></textarea>
-        </div>
-      </div>
+<div class="field">
+    <label class="label">Tanggal MRS:</label>
+    <div class="control">
+        <input type="date" class="input" name="tanggal_mrs">
+    </div>
+</div>
+
+<div class="field">
+    <label class="label">Diagnosis:</label>
+    <div class="control">
+        <textarea class="textarea" name="diagnosis"></textarea>
+    </div>
+</div>
+
+<div class="field">
+    <label class="label">Keadaan Umum:</label>
+    <div class="control">
+        <input type="text" class="input" name="keadaan_umum">
+    </div>
+</div>
+
+<h4>Tanda Vital</h4>
+<table class="table is-bordered">
+    <thead>
+        <tr>
+            <th>Tanda Vital</th>
+            <th>Pertama</th>
+            <th>Kemarin</th>
+            <th>Hari Ini</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Tekanan Darah</td>
+            <td><input type="text" class="input" name="tekanan_darah_pertama"></td>
+            <td><input type="text" class="input" name="tekanan_darah_kemarin"></td>
+            <td><input type="text" class="input" name="tekanan_darah_hari_ini"></td>
+        </tr>
+        <!-- Repeat similar rows for other vital signs -->
+    </tbody>
+</table>
+
+<div class="field">
+    <label class="label">Kondisi saat ini:</label>
+    <div class="control">
+        <textarea class="textarea" name="kondisi_saat_ini"></textarea>
+    </div>
+</div>
+
+
 
       <div class="field is-grouped">
         <div class="control">
