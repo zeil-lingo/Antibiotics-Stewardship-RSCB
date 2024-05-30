@@ -1,33 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="light">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulir Permintaan Antimikroba Pengendalian Khusus</title>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/1.0.1/css/bulma.min.css"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
   </head>
   
   <body>
     <section class="hero">
       <div class="hero-body">
-        <h1 class="title">Formulir Permintaan Antimikroba Pengendalian Khusus</h1>
+        <div class="container has-text-centered">
+            <a class="center" href="https://ibb.co.com/ZVjH49t"><img src="https://i.ibb.co.com/ZVjH49t/Stempel-PPRA.png" alt="Stempel-PPRA" border="0"></a>
+            <br>
+            <br>
+            <h1 class="title">Formulir Permintaan Antimikroba Pengendalian Khusus</h1>
+        </div>
       </div>
     </section>
     
 <form id="form" class="container m-4 pl-4" method="POST">
-  <div class="field">
-      <label class="label">Nama DPJP:</label>
-      <div class="control">
-          <input 
-            type="text" 
-            class="input" 
-            name="nama_dpjp" 
-          /> 
-      </div>
-  </div>
+
+    <div class="field">
+        <label class="label">Nama DPJP:</label>
+        <div class="control">
+            <div class="select">
+            <select class="input" name="nama_dpjp">
+                <option value="dr_danny_darmawan">dr. Danny Darmawan, Sp. PD</option>
+                <option value="dr_heri_sutrisno">dr. Heri Sutrisno, Sp.PD - KHO</option>
+                <option value="dr_jefri">dr. Jefri, Sp.PD</option>
+                <option value="dr_stefany_adi">dr. Stefany Adi W., Sp.PD - KGH</option>
+                <option value="dr_marlon">dr. Marlon, Sp.An TI</option>
+                <option value="dr_telly_victorya">dr. Telly Victorya Kapitana, Sp.An TI</option>
+                <option value="dr_samlek_sunbanu">dr. Samlek E. Sunbanu, Sp.A</option>
+                <option value="dr_simplicia_m">Dr. dr. Simplicia M. A., Sp.A (K)</option>
+                <option value="dr_tjahyo_s">dr. Tjahyo S., SpA</option>
+                <option value="dr_setijo_halim">dr. Setijo Halim, Sp.B</option>
+                <option value="dr_frida_silitonga">dr. Frida M. Silitonga, Sp.S</option>
+                <option value="dr_olivia_wijaya">dr. Olivia J. Wijaya, Sp.N</option>
+                <option value="dr_niva_wilujeng">dr. Niva Wilujeng, Sp. JP</option>
+                <option value="dr_kristian_ratu">dr. Kristian Ratu, Sp.OG</option>
+                <option value="dr_trisna_turwewi">dr. N. Trisna T. K. Turwewi, Sp. THT- KL</option>
+                <option value="dr_made_tambunan">dr. Made P. Tambunan, Sp.U</option>
+                <option value="dr_arian_d">dr. R. Arian D., Sp.BP-RE</option>
+                <option value="dr_andre_sinambela">dr. Andre Tongam Palopor Sinambela, Sp. EM</option>
+                <option value="drg_ellen_p">drg. Ellen S. P., SpBM</option>
+                <option value="drg_revina_marpaung">drg. Revina Marpaung, SpKG</option>
+              </select>
+            </div>
+        </div>
+    </div>
 
 <div class="field">
     <label class="label">Nama Pasien:</label>
@@ -57,22 +82,13 @@
     </div>
 </div>
 
-  
-<div class="field">
-    <label class="label">Ruangan:</label>
-    <div class="control">
-        <input 
-          type="text" 
-          class="input" 
-          name="ruangan"
-        />
-    </div>
-</div>
-
 <div class="field">
     <label class="label">No. Rekam Medis:</label>
     <div class="control">
-        <input type="text" class="input" name="no_rekam_medis">
+        <input 
+        type="text" 
+        class="input" 
+        name="no_rekam_medis">
     </div>
 </div>
 
@@ -98,7 +114,12 @@
 <div class="field">
     <label class="label">Berat Badan:</label>
     <div class="control">
-        <input type="number" class="input" name="berat_badan" step="0.1"> Kg
+        <input 
+        type="number" 
+        class="input" 
+        name="berat_badan" 
+        step="0.1"
+        placeholder="Dalam Kg">
     </div>
 </div>
 
@@ -123,7 +144,8 @@
     </div>
 </div>
 
-<h4>Tanda Vital</h4>
+<div class="field">
+  <label class="label">Tanda Vital:</label>
 <table class="table is-bordered">
     <thead>
         <tr>
@@ -163,6 +185,7 @@
         </tr>
     </tbody>
 </table>
+</div>
 
 <div class="field">
     <label class="label">Kondisi saat ini:</label>
@@ -247,7 +270,8 @@
     </tbody>
 </table>
 
-<h4>Permintaan Antimikroba</h4>
+<div class="field">
+  <label class="label">Permintaan Antimikroba</label>
 <table class="table is-bordered">
     <thead>
         <tr>
@@ -267,8 +291,10 @@
         <!-- Repeat similar rows for other antimicrobials -->
     </tbody>
 </table>
+</div>
 
 <!-- Continue replacing remaining fields with Bulma classes as needed -->
+
 
 <h4>Laboratorium Mikrobiologi saat ini</h4>
 <div class="field">
@@ -355,11 +381,8 @@
       <div class="field is-grouped">
         <div class="control">
           <button class="button is-primary" type="submit" id="submit-button">
-            Sign Up
+            Submit
           </button>
-        </div>
-        <div class="control">
-          <button class="button is-danger">Cancel</button>
         </div>
       </div>
     </form>
@@ -376,6 +399,9 @@
         border-color: aquamarine;
       "
     ></div>
+
+  </div>
+</form>
 
     <script>
       document.getElementById("form").addEventListener("submit", function (e) {
