@@ -44,225 +44,7 @@
 <br>
 <br>
 <form id="antimikrobaForm" class="container m-4 pl-4" method="POST">
-    <div class="form-group">
-        <label>Nama DPJP:</label>
-        <input type="text" class="form-control" name="nama_dpjp" required>
-    </div>
-    
-    <div class="form-group">
-        <label>Nama Pasien:</label>
-        <input type="text" class="form-control" name="nama_pasien" required>
-    </div>
-    
-    <div class="form-group">
-        <label>Ruangan:</label>
-        <select id="ruangan" name="ruangan" class="form-select" aria-label=".form-select">
-                <option selected>Pilih Ruangan Pasien Saat Ini </option>
-                <option value="IGD">IGD</option>
-                <option value="ICU">ICU</option>
-                <option value="Carolus Tim 1">Carolus Tim 1</option>
-                <option value="Carolus Tim 2">Carolus Tim 2</option>
-                <option value="Lukas">Lukas</option>
-                <option value="Lukas - Isolasi">Lukas - Isolasi</option>
-        </select>
-    </div>
-    
-    <div class="form-group">
-        <label>No. Rekam Medis:</label>
-        <input type="text" class="form-control" name="no_rekam_medis">
-    </div>
-    
-    <div class="form-group">
-        <label>Tanggal Lahir:</label>
-        <input type="date" class="form-control" name="tanggal_lahir">
-    </div>
-    
-    <div class="form-group">
-        <label>Jenis Kelamin:</label><br>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="jenis_kelamin" value="L" required>
-            <label class="form-check-label">L</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="jenis_kelamin" value="P" required>
-            <label class="form-check-label">P</label>
-        </div>
-    </div>
-    
-    <div class="form-group">
-        <label>Berat Badan:</label>
-        <input type="number" class="form-control" name="berat_badan" step="0.1"> Kg
-    </div>
-    
-    <div class="form-group">
-        <label>Tanggal MRS:</label>
-        <input type="date" class="form-control" name="tanggal_mrs">
-    </div>
-    
-    <div class="form-group">
-        <label>Diagnosis:</label>
-        <textarea class="form-control" name="diagnosis"></textarea>
-    </div>
-    
-    <div class="form-group">
-        <label>Keadaan Umum:</label>
-        <input type="text" class="form-control" name="keadaan_umum">
-    </div>
-    
-    <h4>Tanda Vital</h4>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Tanda Vital</th>
-                <th>Pertama</th>
-                <th>Kemarin</th>
-                <th>Hari Ini</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Tekanan Darah</td>
-                <td><input type="text" class="form-control" name="tekanan_darah_pertama"></td>
-                <td><input type="text" class="form-control" name="tekanan_darah_kemarin"></td>
-                <td><input type="text" class="form-control" name="tekanan_darah_hari_ini"></td>
-            </tr>
-            <tr>
-                <td>Nadi</td>
-                <td><input type="text" class="form-control" name="nadi_pertama"></td>
-                <td><input type="text" class="form-control" name="nadi_kemarin"></td>
-                <td><input type="text" class="form-control" name="nadi_hari_ini"></td>
-            </tr>
-            <tr>
-                <td>RR</td>
-                <td><input type="text" class="form-control" name="rr_pertama"></td>
-                <td><input type="text" class="form-control" name="rr_kemarin"></td>
-                <td><input type="text" class="form-control" name="rr_hari_ini"></td>
-            </tr>
-            <tr>
-                <td>Suhu</td>
-                <td><input type="text" class="form-control" name="suhu_pertama"></td>
-                <td><input type="text" class="form-control" name="suhu_kemarin"></td>
-                <td><input type="text" class="form-control" name="suhu_hari_ini"></td>
-            </tr>
-        </tbody>
-    </table>
-    
-    <div class="form-group">
-        <label>Kondisi saat ini:</label>
-        <textarea class="form-control" name="kondisi_saat_ini"></textarea>
-    </div>
-    
-    <div class="form-group">
-        <label>Penyakit Penyerta:</label>
-        <textarea class="form-control" name="penyakit_penyerta"></textarea>
-    </div>
-    
-    <div class="form-group">
-        <label>Pasien Rujukan:</label><br>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" name="pasien_rujukan" value="Ya">
-            <label class="form-check-label">Ya</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" name="pasien_rujukan" value="Tidak">
-            <label class="form-check-label">Tidak</label>
-        </div>
-    </div>
-    
-    <div class="form-group">
-        <label>Nama RS:</label>
-        <input type="text" class="form-control" name="nama_rs">
-    </div>
-    
-    <div class="form-group">
-        <label>Riwayat Antimikroba sebelumnya / saat ini:</label><br>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" name="riwayat_antimikroba" value="Ya">
-            <label class="form-check-label">Ya</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" name="riwayat_antimikroba" value="Tidak">
-            <label class="form-check-label">Tidak</label>
-        </div>
-    </div>
-    
-    <h4>Antimikroba</h4>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Antimikroba</th>
-                <th>Ya</th>
-                <th>Tidak</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Ampisilin/Sulbaktam</td>
-                <td><input type="checkbox" class="form-check-input" name="amp_sul" value="Ya"></td>
-                <td><input type="checkbox" class="form-check-input" name="amp_sul" value="Tidak"></td>
-            </tr>
-            <tr>
-                <td>Levofloksasin</td>
-                <td><input type="checkbox" class="form-check-input" name="levo" value="Ya"></td>
-                <td><input type="checkbox" class="form-check-input" name="levo" value="Tidak"></td>
-            </tr>
-            <tr>
-                <td>Siprofloksasin</td>
-                <td><input type="checkbox" class="form-check-input" name="cipro" value="Ya"></td>
-                <td><input type="checkbox" class="form-check-input" name="cipro" value="Tidak"></td>
-            </tr>
-            <tr>
-                <td>Kotrimoksazol</td>
-                <td><input type="checkbox" class="form-check-input" name="kotrim" value="Ya"></td>
-                <td><input type="checkbox" class="form-check-input" name="kotrim" value="Tidak"></td>
-            </tr>
-            <tr>
-                <td>Meropenem</td>
-                <td><input type="checkbox" class="form-check-input" name="mero" value="Ya"></td>
-                <td><input type="checkbox" class="form-check-input" name="mero" value="Tidak"></td>
-            </tr>
-            <tr>
-                <td>Kolistin</td>
-                <td><input type="checkbox" class="form-check-input" name="kolis" value="Ya"></td>
-                <td><input type="checkbox" class="form-check-input" name="kolis" value="Tidak"></td>
-            </tr>
-            <tr>
-                <td>Vankomisin</td>
-                <td><input type="checkbox" class="form-check-input" name="vanko" value="Ya"></td>
-                <td><input type="checkbox" class="form-check-input" name="vanko" value="Tidak"></td>
-            </tr>
-            <tr>
-                <td>Tigesiklin</td>
-                <td><input type="checkbox" class="form-check-input" name="tiges" value="Ya"></td>
-                <td><input type="checkbox" class="form-check-input" name="tiges" value="Tidak"></td>
-            </tr>
-        </tbody>
-    </table>
-    
-    <div class="form-group">
-        <label>Diagnosa saat ini:</label>
-        <textarea class="form-control" name="diagnosa_saat_ini"></textarea>
-    </div>
-    
-    <div class="form-group">
-        <label>Pemeriksaan laboratorium:</label>
-        <textarea class="form-control" name="pemeriksaan_lab"></textarea>
-    </div>
-    
-    <div class="form-group">
-        <label>Terapi:</label>
-        <textarea class="form-control" name="terapi"></textarea>
-    </div>
-    
-    <div class="form-group">
-        <label>Tanggal Berobat:</label>
-        <input type="date" class="form-control" name="tanggal_berobat">
-    </div>
-    
-    <div class="form-group">
-        <label>Catatan Tambahan:</label>
-        <textarea class="form-control" name="catatan_tambahan"></textarea>
-    </div>
+    <!-- Form fields here... -->
     
     <div class="form-group center">
         <button type="submit" class="btn btn-primary">Kirim</button>
@@ -273,18 +55,23 @@
 document.getElementById('antimikrobaForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxKMzkZjLbn0o0xgIztMOK1Xrm9xCGqmO1vsSv5qKzr3IgWl8otNM0Smd_g3RT8_Pmt/exec' ;
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxKMzkZjLbn0o0xgIztMOK1Xrm9xCGqmO1vsSv5qKzr3IgWl8otNM0Smd_g3RT8_Pmt/exec';
     const form = document.getElementById('antimikrobaForm');
     const formData = new FormData(form);
 
     fetch(scriptURL, { method: 'POST', body: formData })
         .then(response => response.json())
         .then(data => {
-            alert('Form submission successful');
-            console.log('Success:', data);
+            if (data.result === 'success') {
+                alert('Form submission successful');
+                console.log('Success:', data);
+            } else {
+                alert('Form submission failed: ' + data.message);
+                console.error('Error:', data);
+            }
         })
         .catch((error) => {
-            alert('Form submission failed');
+            alert('Form submission failed. Please check the console for more details.');
             console.error('Error:', error);
         });
 });
