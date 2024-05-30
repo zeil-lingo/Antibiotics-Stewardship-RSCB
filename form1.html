@@ -121,7 +121,173 @@
     </div>
 </div>
 
+<div class="field">
+    <label class="label">Penyakit Penyerta:</label>
+    <div class="control">
+        <textarea class="textarea" name="penyakit_penyerta"></textarea>
+    </div>
+</div>
 
+<div class="field">
+    <label class="label">Pasien Rujukan:</label>
+    <div class="control">
+        <label class="checkbox">
+            <input type="checkbox" name="pasien_rujukan" value="Ya">
+            Ya
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" name="pasien_rujukan" value="Tidak">
+            Tidak
+        </label>
+    </div>
+</div>
+
+<div class="field">
+    <label class="label">Nama RS:</label>
+    <div class="control">
+        <input type="text" class="input" name="nama_rs">
+    </div>
+</div>
+
+<div class="field">
+    <label class="label">Riwayat Antimikroba sebelumnya / saat ini:</label>
+    <div class="control">
+        <label class="checkbox">
+            <input type="checkbox" name="riwayat_antimikroba" value="Ya">
+            Ya
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" name="riwayat_antimikroba" value="Tidak">
+            Tidak
+        </label>
+    </div>
+</div>
+
+<h4>Antimikroba</h4>
+<table class="table is-bordered">
+    <thead>
+        <tr>
+            <th>Antimikroba</th>
+            <th>Keterangan</th>
+            <th>Stop Tanggal</th>
+            <th>Lama Pemakaian</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input type="text" class="input" name="antimikroba_1"></td>
+            <td><input type="text" class="input" name="keterangan_1"></td>
+            <td><input type="date" class="input" name="stop_tanggal_1"></td>
+            <td><input type="text" class="input" name="lama_pemakaian_1"></td>
+        </tr>
+        <!-- Repeat similar rows for other antimicrobials -->
+    </tbody>
+</table>
+
+<h4>Permintaan Antimikroba</h4>
+<table class="table is-bordered">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Antimikroba 1</th>
+            <th>Antimikroba 2</th>
+            <th>Antimikroba 3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nama Antimikroba</td>
+            <td><input type="text" class="input" name="nama_antimikroba_1"></td>
+            <td><input type="text" class="input" name="nama_antimikroba_2"></td>
+            <td><input type="text" class="input" name="nama_antimikroba_3"></td>
+        </tr>
+        <!-- Repeat similar rows for other antimicrobials -->
+    </tbody>
+</table>
+
+<!-- Continue replacing remaining fields with Bulma classes as needed -->
+
+<h4>Laboratorium Mikrobiologi saat ini</h4>
+<div class="field">
+    <label class="label">Hasil Kultur:</label>
+    <div class="control">
+        <label class="checkbox">
+            <input class="checkbox" type="checkbox" name="hasil_kultur" value="Ada">
+            Ada, lampirkan copy hasil kultur
+        </label>
+        <label class="checkbox">
+            <input class="checkbox" type="checkbox" name="hasil_kultur" value="Tidak Ada">
+            Tidak Ada
+        </label>
+    </div>
+</div>
+
+<div class="field">
+    <label class="label">Dikirim tanggal:</label>
+    <div class="control">
+        <input type="date" class="input" name="dikirim_tanggal">
+    </div>
+</div>
+
+<table class="table is-bordered">
+    <thead>
+        <tr>
+            <th>Tanggal Kultur</th>
+            <th>Spesimen</th>
+            <th>Hasil</th>
+            <th>Resisten / Intermediate / Sensitif</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input type="date" class="input" name="tanggal_kultur_1"></td>
+            <td><input type="text" class="input" name="spesimen_1"></td>
+            <td><input type="text" class="input" name="hasil_1"></td>
+            <td><input type="text" class="input" name="ris_1"></td>
+        </tr>
+        <!-- Repeat similar rows for other samples -->
+    </tbody>
+</table>
+
+<h4>Hasil Laboratorium</h4>
+<table class="table is-bordered">
+    <thead>
+        <tr>
+            <th>Pemeriksaan</th>
+            <th>Tanggal</th>
+            <th>Tanggal</th>
+            <th>Tanggal</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Darah Lengkap</td>
+            <td><input type="date" class="input" name="darah_lengkap_1"></td>
+            <td><input type="date" class="input" name="darah_lengkap_2"></td>
+            <td><input type="date" class="input" name="darah_lengkap_3"></td>
+        </tr>
+        <!-- Repeat similar rows for other examinations -->
+    </tbody>
+</table>
+
+<h4>Hasil Pemeriksaan Radiologi / Penunjang lain</h4>
+<table class="table is-bordered">
+    <thead>
+        <tr>
+            <th>Pemeriksaan</th>
+            <th>Tanggal</th>
+            <th>Hasil</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input type="text" class="input" name="pemeriksaan_radiologi_1"></td>
+            <td><input type="date" class="input" name="tanggal_radiologi_1"></td>
+            <td><input type="text" class="input" name="hasil_radiologi_1"></td>
+        </tr>
+        <!-- Repeat similar rows for other radiological examinations -->
+    </tbody>
+</table>
 
       <div class="field is-grouped">
         <div class="control">
