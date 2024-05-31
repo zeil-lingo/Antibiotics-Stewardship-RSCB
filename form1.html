@@ -492,15 +492,14 @@
 <script>
     const { PDFDocument } = PDFLib
 
-    function updateVariables() {
-            var nama_dpjp = document.getElementById('nama_dpjp_input').value;
-            var nama_pasien = document.getElementById('nama_pasien').value;
-            var ruangan = document.getElementById('ruangan').value;
-            var no_rekam_medis   = document.getElementById('no_rekam_medis').value;
-            var tanggal_lahir = document.getElementById('tanggal_lahir').value;
-            var jenis_kelamin = document.getElementById('jenis_kelamin').value;
-            var berat_badan = document.getElementById('berat_badan').value;
-
+    async function updateVariables() {
+        var nama_dpjp = document.getElementById('nama_dpjp_input').value;
+        var nama_pasien = document.getElementById('nama_pasien').value;
+        var ruangan = document.getElementById('ruangan').value;
+        var no_rekam_medis   = document.getElementById('no_rekam_medis').value;
+        var tanggal_lahir = document.getElementById('tanggal_lahir').value;
+        var jenis_kelamin = document.getElementById('jenis_kelamin').value;
+        var berat_badan = document.getElementById('berat_badan').value;
     }
 
     async function fillForm() {
@@ -539,7 +538,6 @@
       download(pdfBytes, "pdf-lib_form_creation_example.pdf", "application/pdf");
     }
   </script>
-
   </body>
 
 <footer class="footer m-0 p-2 pl-4 has-text-centered">
