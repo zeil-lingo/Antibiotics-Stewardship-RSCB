@@ -414,7 +414,6 @@
 
     
     <script>
-
     document.getElementById('nama_dpjp_input').addEventListener('input', function(event) {
         var input = event.target;
         var datalist = document.getElementById(input.getAttribute('list'));
@@ -505,7 +504,14 @@
     async function fillForm() {
     	// Fetch the PDF with form fields
       const formUrl = 'https://github.com/zeil-lingo/Antibiotics-Stewardship-RSCB/blob/824fd0bc10873b929c895ee0f8ecdb5e9261b889/V0.23%20Permintaan%20Antibiotik.pdf'
-      const formPdfBytes = await fetch(formUrl).then(res => res.arrayBuffer())
+      const response = await fetch(formUrl, { mode: 'no-cors' });
+        if (response.ok) {
+            const formPdfBytes = await response.arrayBuffer();
+            // Proceed with processing the PDF
+        } else {
+        console.error('Failed to fetch the PDF');
+        }
+        }
 
       // Load a PDF with form fields
       const pdfDoc = await PDFDocument.load(formPdfBytes)
