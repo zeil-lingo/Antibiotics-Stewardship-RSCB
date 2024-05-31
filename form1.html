@@ -385,7 +385,7 @@
 
                 <div class="field is-grouped">
                     <div class="control">
-                    <button class="button is-primary" type="submit" id="submit-button" onclick="fillForm()">
+                    <button class="button is-primary" type="submit" id="submit-button" onClick="fillForm()">
                         Submit
                     </button>
                     </div>
@@ -493,19 +493,18 @@
     const fs = require('fs');
     const { execSync } = require('child_process');
 
-    try {
-    await PDFDocument.load(fs.readFileSync(`./pdfs/file.pdf`), {
-        ignoreEncryption: true,
-        throwOnInvalidObject: true,
-    });
+    try { 
+        await PDFDocument.load(fs.readFileSync(`./pdfs/file.pdf`), {
+            ignoreEncryption: true,
+            throwOnInvalidObject: true,
+        });
     } catch (error) {
-    const command =
-        `gs -sDEVICE=pdfwrite -dBATCH -dNOPAUSE -dSAFER ` +
-        `-sColorConversionStrategy=UseDeviceIndependentColor -dEmbedAllFonts=true ` +
-        `-dPrinted=true -dPDFA -sProcessColorModel=DeviceRGB -dPDFACompatibilityPolicy=1 ` +
-        `-dDetectDuplicateImages -r210 -dFastWebView=true ` +
-        `-sOutputFile=./pdfs/file_fixed.pdf ./pdfs/file.pdf`;
-
+        const command =
+            `gs -sDEVICE=pdfwrite -dBATCH -dNOPAUSE -dSAFER ` +
+            `-sColorConversionStrategy=UseDeviceIndependentColor -dEmbedAllFonts=true ` +
+            `-dPrinted=true -dPDFA -sProcessColorModel=DeviceRGB -dPDFACompatibilityPolicy=1 ` +
+            `-dDetectDuplicateImages -r210 -dFastWebView=true ` +
+            `-sOutputFile=./pdfs/file_fixed.pdf ./pdfs/file.pdf`;
     execSync(command);
     }
 
