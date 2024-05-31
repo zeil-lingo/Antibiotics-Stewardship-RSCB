@@ -33,8 +33,8 @@
     <div class="field">
         <label class="label">Nama DPJP:</label>
         <div class="control">
-            <div class="select">
-            <select class="input" name="nama_dpjp">
+            <input class="input" type="text" name="nama_dpjp" id="nama_dpjp_input" list="nama_dpjp_options">
+            <datalist id="nama_dpjp_options">
                 <option value="dr_danny_darmawan">dr. Danny Darmawan, Sp. PD</option>
                 <option value="dr_heri_sutrisno">dr. Heri Sutrisno, Sp.PD - KHO</option>
                 <option value="dr_jefri">dr. Jefri, Sp.PD</option>
@@ -55,8 +55,7 @@
                 <option value="dr_andre_sinambela">dr. Andre Tongam Palopor Sinambela, Sp. EM</option>
                 <option value="drg_ellen_p">drg. Ellen S. P., SpBM</option>
                 <option value="drg_revina_marpaung">drg. Revina Marpaung, SpKG</option>
-              </select>
-            </div>
+            </datalist>
         </div>
     </div>
 
@@ -415,6 +414,21 @@
 
     
     <script>
+
+    document.getElementById('nama_dpjp_input').addEventListener('input', function(event) {
+        var input = event.target;
+        var datalist = document.getElementById(input.getAttribute('list'));
+        var options = datalist ? Array.from(datalist.options) : [];
+
+        var selectedOption = options.find(function(option) {
+            return option.value === input.value;
+        });
+
+        if (selectedOption) {
+            input.value = selectedOption.textContent;
+        }
+    });
+      
       document.getElementById("form").addEventListener("submit", function (e) {
         e.preventDefault(); // Prevent the default form submission
         document.getElementById("message").textContent = "Submitting..";
