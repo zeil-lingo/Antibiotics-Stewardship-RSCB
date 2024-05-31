@@ -8,6 +8,11 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
+    <!-- Place this script tag inside the <head> section -->
+    <script src="https://cdn.jsdelivr.net/npm/@pdf-lib/pdf-lib@1.15.0/dist/pdf-lib.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.2"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
   </head>
   
   <body>
@@ -387,6 +392,9 @@
                         Submit
                     </button>
                     </div>
+                    <button class="button is-primary" id="fill-form-button">
+                        Print
+                    </button>
                 </div>
                 </form>
                 <div
@@ -486,6 +494,64 @@
           });
       });
     </script>
+
+<script>
+    document.getElementById("fill-form-button").addEventListener("click", function () {
+        var path = 'V0.23 Permintaan Antibiotik.pdf';
+        fillForm(path);
+    });
+</script>
+
+
+<script>
+    function update_variables() {
+        // Collect values from form fields
+        var nama_dpjp = document.getElementById('nama_dpjp_input').value;
+        var nama_pasien = document.querySelector('[name="nama_pasien"]').value;
+        var ruangan = document.querySelector('[name="ruangan"]').value;
+        // Collect other field values similarly
+        
+        // Return the collected data as an object
+        return {
+            'V0.23 Permintaan Antibiotik.pdf': {
+                'nama_dpjp': nama_dpjp,
+                'nama_pasien': nama_pasien,
+                'ruangan': ruangan,
+                // Add other fields here
+            }
+            // Add more PDF URLs with their respective field data
+        };
+    }
+</script>
+
+<!-- Fill Form Function -->
+<script>
+    async function fillForm(path) {
+        var form_data = update_variables(); // Call update_variables to get form data
+        const formUrl = path;
+        const formPdfBytes = await fetch(formUrl).then(res => res.arrayBuffer());
+        const pdfDoc = await PDFLib.PDFDocument.load(formPdfBytes, { ignoreEncryption: true })
+        const form = pdfDoc.getForm()
+
+        for (const [fieldname, data] of Object.entries(form_data[path])) {
+            var field = form.getField(fieldname);
+            if (field) {
+                field.setText(data);
+            } else {
+                console.error('Field not found:', fieldname);
+            }
+        }
+
+        const pdfBytes = await pdfDoc.save()
+
+        // Generate a filename based on the timestamp or some other logic
+        var outputname = 'filled_form.pdf';
+
+        // Download the filled PDF
+        downloadBlob(pdfBytes, outputname, 'application/pdf');
+    }
+</script>
+
   </body>
 
 <footer class="footer m-0 p-2 pl-4 has-text-centered">
