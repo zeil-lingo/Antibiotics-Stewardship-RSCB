@@ -489,71 +489,69 @@
     </script>
 
 <script>
-    const { PDFDocument } = require('pdf-lib');
-    const fs = require('fs');
-    const { execSync } = require('child_process');
-
-    try { 
-        await PDFDocument.load(fs.readFileSync(`./pdfs/file.pdf`), {
-            ignoreEncryption: true,
-            throwOnInvalidObject: true,
-        });
-    } catch (error) {
-        const command =
-            `gs -sDEVICE=pdfwrite -dBATCH -dNOPAUSE -dSAFER ` +
-            `-sColorConversionStrategy=UseDeviceIndependentColor -dEmbedAllFonts=true ` +
-            `-dPrinted=true -dPDFA -sProcessColorModel=DeviceRGB -dPDFACompatibilityPolicy=1 ` +
-            `-dDetectDuplicateImages -r210 -dFastWebView=true ` +
-            `-sOutputFile=./pdfs/file_fixed.pdf ./pdfs/file.pdf`;
-    execSync(command);
-    }
-
-    async function updateVariables() {
-        var nama_dpjp = document.getElementById('nama_dpjp_input').value;
-        var nama_pasien = document.getElementById('nama_pasien').value;
-        var ruangan = document.getElementById('ruangan').value;
-        var no_rekam_medis   = document.getElementById('no_rekam_medis').value;
-        var tanggal_lahir = document.getElementById('tanggal_lahir').value;
-        var jenis_kelamin = document.getElementById('jenis_kelamin').value;
-        var berat_badan = document.getElementById('berat_badan').value;
-    }
-
+    const { PDFDocument } = PDFLib
     async function fillForm() {
-    	// Fetch the PDF with form fields
-      const formUrl = 'https://test-permintaan-antibiotik.tiiny.site'
-      const formPdfBytes = await fetch(formUrl).then(res => res.arrayBuffer())
+    try {
+        // Fetch the PDF with form fields
+        const formUrl = 'https://test-permintaan-antibiotik.tiiny.site';
+        const formPdfBytes = await fetch(formUrl).then(res => res.arrayBuffer());
 
-      // Load a PDF with form fields
-      const pdfDoc = await PDFDocument.load(formPdfBytes)
+        // Get the form variables
+        const nama_dpjp = document.getElementById('nama_dpjp_input').value;
+        const nama_pasien = document.getElementsByName('nama_pasien').value;
+        const ruangan = document.getElementsByName('ruangan').value;
+        const no_rekam_medis = document.getElementsByName('no_rekam_medis').value;
+        const tanggal_lahir = document.getElementsByName('tanggal_lahir').value;
+        const jenis_kelamin = document.getElementsByName('jenis_kelamin').value;
+        const berat_badan = document.getElementsByName('berat_badan').value;
 
-      // Get the form containing all the fields
-      const form = pdfDoc.getForm()
+        // Load a PDF with form fields
+        const pdfDoc = await PDFDocument.load(formPdfBytes);
 
-      // Get all fields in the PDF by their names
-      const pdf_nama_dpjp = form.getTextField('nama_dpjp')
-      const pdf_nama_pasien = form.getTextField('nama_pasien')
-      const pdf_ruangan = form.getTextField('ruangan')
-      const pdf_rekam_medis = form.getTextField('no_rekam_medis')
-      const pdf_lahir = form.getTextField('tanggal_lahir')
-      const pdf_kelamin = form.getTextField('jenis_kelamin')
-      const pdf_berat_badan = form.getTextField('berat_badan')
+        // Get the form containing all the fields
+        const form = pdfDoc.getForm();
 
-      // Fill in the basic info fields
-      pdf_nama_dpjp.setText(nama_dpjp)
-      pdf_nama_pasien.setText(nama_pasien)
-      pdf_ruangan.setText(ruangan)
-      pdf_rekam_medis.setText(no_rekam_medis)
-      pdf_lahir.setText(tanggal_lahir)
-      pdf_kelamin.setText(jenis_kelamin)
-      pdf_berat_badan.setText(berat_badan)
+        // Get all fields in the PDF by their names
+        const pdf_nama_dpjp = form.getTextField('nama_dpjp');
+        const pdf_nama_pasien = form.getTextField('nama_pasien');
+        const pdf_ruangan = form.getTextField('ruangan');
+        const pdf_rekam_medis = form.getTextField('no_rekam_medis');
+        const pdf_lahir = form.getTextField('tanggal_lahir');
+        const pdf_kelamin = form.getTextField('jenis_kelamin');
+        const pdf_berat_badan = form.getTextField('berat_badan');
 
-      // Serialize the PDFDocument to bytes (a Uint8Array)
-      const pdfBytes = await pdfDoc.save()
+        // Fill in the basic info fields
+        pdf_nama_dpjp.setText(nama_dpjp);
+        pdf_nama_pasien.setText(nama_pasien);
+        pdf_ruangan.setText(ruangan);
+        pdf_rekam_medis.setText(no_rekam_medis);
+        pdf_lahir.setText(tanggal_lahir);
+        pdf_kelamin.setText(jenis_kelamin);
+        pdf_berat_badan.setText(berat_badan);
 
-	   // Trigger the browser to download the PDF document
-      download(pdfBytes, "pdf-lib_form_creation_example.pdf", "application/pdf");
+        // Serialize the PDFDocument to bytes (a Uint8Array)
+        const pdfBytes = await pdfDoc.save();
+
+        // Trigger the browser to download the PDF document
+        download(pdfBytes, "filled_form.pdf", "application/pdf");
+    } catch (error) {
+        console.error("Error:", error);
     }
-  </script>
+}
+
+// Helper function to download a file
+function download(data, filename, type) {
+    const blob = new Blob([data], { type: type });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.style.display = 'none';
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+}
+</script>
   </body>
 
 <footer class="footer m-0 p-2 pl-4 has-text-centered">
