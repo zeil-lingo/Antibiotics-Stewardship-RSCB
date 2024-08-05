@@ -36,7 +36,6 @@
       <div class="columns is-centered">
             <form id="form" class="container m-2 pl-2" method="POST">
                 <div class="box">
-                    <h2 class="subtitle">Riwayat Klinis</h2>
                 <div class="field">
                     <label class="label">Nama DPJP:</label>
                     <div class="control">
@@ -152,28 +151,46 @@
             <div class="field">
                 <label class="label">Diagnosis:</label>
                 <div class="control">
-                    <input class="text" name="diagnosis" id="diagnosis" required></input>
+                    <input 
+                    type="text"
+                    class="input" 
+                    name="diagnosis" 
+                    id="diagnosis"
+                    placeholder="Terutama diagnosis infeksi" 
+                    required></input>
                 </div>
             </div>
 
             <div class="field">
                 <label class="label">Kode ICD-10:</label>
                 <div class="control">
-                    <input class="text" name="kode_ICD" id="kode_ICD" required></input>
+                    <input 
+                    type="text"
+                    class="input" 
+                    name="kode_ICD" 
+                    id="kode_ICD" 
+                    placeholder="Tuliskan kode ICD-10 diagnosis utama" 
+                    required></input>
                 </div>
             </div>
 
             <div class="field">
                 <label class="label">Penyakit Penyerta:</label>
                 <div class="control">
-                    <textarea class="textarea" name="penyakit_penyerta"></textarea>
+                    <textarea class="textarea" name="penyakit_penyerta" placeholder="Tuliskan penyakit penyerta pasien, misalkan: Diabetes Melitus, Jantung" ></textarea>
                 </div>
             </div>
 
             <div class="field">
                 <label class="label">Keadaan Umum:</label>
                 <div class="control">
-                    <input type="text" class="input" name="keadaan_umum">
+                    <div class="select">
+                        <select name="keadaan_umum" class="input" id="keadaan_umum" required>
+                            <option value="sakit_ringan">Tampak Sakit Ringan</option>
+                            <option value="sakit_sedang">Tampak Sakit Berat</option>
+                            <option value="sakit_berat">Tampak Sakit Sedang</option>
+                        </select>
+                    </div>
                 </div>
             </div>
 
@@ -188,6 +205,12 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <tr>
+                        <td>GCS</td>
+                        <td><input type="text" class="input" name="GCS_masuk" required></td>
+                        <td><input type="text" class="input" name="GCS_sekarang" required></td>
+                    </tr>
+
                     <tr>
                         <td>Tekanan Darah</td>
                         <td><input type="text" class="input" name="tekanan_darah_masuk" required></td>
@@ -216,7 +239,7 @@
             </div>
 
             <div class="field">
-                <label class="label">Anamnesis:</label>
+                <label class="label">Riwayat Anamnesis dan Pemeriksaan Fisik:</label>
                 <div class="control">
                     <textarea class="textarea" name="kondisi_saat_ini"></textarea>
                 </div>
@@ -293,20 +316,35 @@
             <div class="field">
             <label class="label">Permintaan Antimikroba</label>
             <table class="table is-bordered is-fullwidth">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Antimikroba 1</th>
-                    </tr>
-                </thead>
                 <tbody>
                     <tr>
                         <td>Nama Antimikroba</td>
-                        <td><input type="text" class="input" name="nama_antimikroba_1"></td>
+                        <td>
+                            <div class="select">
+                                <select name="nama_antimikroba_1" class="input" id="nama_antimikroba_1" required>
+                                    <option value="Meropenem">Meropenem</option>
+                                    <option value="Ceftazidime">Ceftazidime</option>
+                                </select>                        
+                        </td>
                     </tr>
                     <tr>
-                        <td>Regimen (Dosis / Cara / Saat / Lama)</td>
-                        <td><input type="text" class="input" name="regimen_1"></td>
+                        <td>Dosis Per Pemberian:</td>
+                        <td><input type="number" class="input" name="dosis_1" placeholder="dalam mg" required></td>
+                    </tr>
+                    <tr>
+                        <td>Pemberian Per Hari:</td>
+                        <td>
+                            <div class="select">
+                                <select name="per_hari_1" class="input" id="per_hari_1" required>
+                                    <option value="OD">Once Daily (1x1)</option>
+                                    <option value="BD">Twice Daily (2x1)</option>
+                                    <option value="TID">Thrice Daily (3x1)</option>
+                                    <option value="QID">Four Times Daily (4x1)</option>
+                                </select>   
+                    </tr>
+                    <tr>
+                        <td>Perkiraan Durasi Pemberian:</td>
+                        <td><input type="text" class="input" name="durasi_1" placeholder="dalam hari"></td>
                     </tr>
                     <tr>
                         <td>Indikasi</td>
@@ -329,7 +367,7 @@
 
             </div>
             <div class="box">
-                <h3><b>Hasil Pemeriksaan Penunjang:</b></h3>
+                <h2 class="subtitle">Hasil Penunjang:</h2>
                 <br>
             <div class="field">
                 <label class="label">Hasil Kultur:</label>
@@ -357,7 +395,8 @@
                 </div>
             </div>
 
-            <h3><b>Hasil Pengambilan Kultur</b></h3>
+            <h4><b>Hasil Pengambilan Kultur</b></h4>
+            <br>
             <table class="table is-bordered is-fullwidth">
                 <thead>
                     <tr>
@@ -378,7 +417,8 @@
                 </tbody>
             </table>
 
-            <h3><b>Hasil Laboratorium</b></h3>
+            <h4><b>Hasil Laboratorium</b></h4>
+            <br>
             <table class="table is-bordered is-fullwidth">
                 <thead>
                     <tr>
@@ -391,43 +431,44 @@
                 <tbody>
                     <tr>
                         <td>Darah Lengkap</td>
-                        <td><input type="date" class="input" name="darah_lengkap_tanggal"></td>
                         <td>
                             <label class="radio"><input type="radio" name="darah_lengkap_ada" value="Ada" id='darah_lengkap_ada'> Ada</label>
                             <br>
                             <label class="radio"><input type="radio" name="darah_lengkap_ada" value="Tidak" id='darah_lengkap_ada'> Tidak</label>
                         </td>
-                        <td><textarea class="textarea" name="darah_lengkap_hasil"></td>
+                        <td><input type="date" class="input" name="darah_lengkap_tanggal"></td>
+                        
+                        <td><textarea class="textarea" name="darah_lengkap_hasil"></textarea></td>
                     </tr>
                     <tr>
                         <td>Urine Lengkap</td>
-                        <td><input type="date" class="input" name="urine_lengkap_tanggal"></td>
                         <td>
                             <label class="radio"><input type="radio" name="urine_lengkap_ada" value="Ada" id='urine_lengkap_ada'> Ada</label>
                             <br>
                             <label class="radio"><input type="radio" name="urine_lengkap_ada" value="Tidak" id='urine_lengkap_ada'> Tidak</label>
                         </td>
-                        <td><textarea class="textarea" name="urine_lengkap_hasil"></td>
+                        <td><input type="date" class="input" name="urine_lengkap_tanggal"></td>
+                        <td><textarea class="textarea" name="urine_lengkap_hasil"></textarea></td>
                     </tr>
                     <tr>
                         <td>CRP</td>
-                        <td><input type="date" class="input" name="crp_tanggal"></td>
                         <td>
                             <label class="radio"><input type="radio" name="crp_ada" value="Ada" id='crp_ada'> Ada</label>
                             <br>
                             <label class="radio"><input type="radio" name="crp_ada" value="Tidak" id='crp_ada'> Tidak</label>
                         </td>
-                        <td><textarea class="textarea" name="crp_hasil"></td>
+                        <td><input type="date" class="input" name="crp_tanggal"></td>
+                        <td><textarea class="textarea" name="crp_hasil"></textarea></td>
                     </tr>
                     <tr>
                         <td>Prokalsitonin</td>
-                        <td><input type="date" class="input" name="prokalsitonin_tanggal"></td>
                         <td>
                             <label class="radio"><input type="radio" name="prokalsitonin_ada" value="Ada" id='prokalsitonin_ada'> Ada</label>
                             <br>
                             <label class="radio"><input type="radio" name="prokalsitonin_ada" value="Tidak" id='prokalsitonin_ada'> Tidak</label>
                         </td>
-                        <td><textarea class="textarea" name="prokalsitonin_hasil"></td>
+                        <td><input type="date" class="input" name="prokalsitonin_tanggal"></td>
+                        <td><textarea class="textarea" name="prokalsitonin_hasil"></textarea></td>
                     </tr>
                     <!-- Repeat similar rows for other examinations -->
                 </tbody>
