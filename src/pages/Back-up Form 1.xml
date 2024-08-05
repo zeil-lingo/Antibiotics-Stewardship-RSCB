@@ -561,7 +561,7 @@
 
     
     <script>
-    document.getElementById('id_nama_dpjp').addEventListener('input', function(event) {
+    document.getElementById('nama_DPJP').addEventListener('input', function(event) {
         var input = event.target;
         var datalist = document.getElementById(input.getAttribute('list'));
         var options = datalist ? Array.from(datalist.options) : [];
@@ -643,78 +643,62 @@
       const doc = new jsPDF();
 
       // Collect form data specifically for namaDPJP
-      const sel = document.getElementById('id_nama_dpjp');
-      const id_nama_dpjp = sel.value;
+        const sel = document.getElementById('nama_DPJP');
+        const namaDPJP = sel.value;
 
       // Collect form data
-      const id_nama_pasien = document.getElementById("id_nama_pasien").value;
-      const id_ruangan = document.getElementById("id_ruangan").value;
-        const id_no_rekam_medis = document.getElementById("id_no_rekam_medis").value;
-        const id_tanggal_lahir = document.getElementById("id_tanggal_lahir").value;
-        const id_jenis_kelamin = document.querySelector('input[name="jenis_kelamin"]:checked').value;
-        const id_berat_badan = document.getElementById("id_berat_badan").value;
-        const id_tanggal_mrs = document.getElementById("id_tanggal_mrs").value;
-        const id_diagnosis = document.getElementById("id_diagnosis").value;
-        const id_kode_ICD = document.getElementById("id_kode_ICD").value;
-        const id_penyakit_penyerta = document.getElementById("id_penyakit_penyerta").value;
-        const id_kondisi_saat_ini = document.getElementById("id_kondisi_saat_ini").value;
-        const id_keadaan_umum = document.getElementById("id_keadaan_umum").value;
-        const id_GCS_masuk = document.getElementById("id_GCS_masuk").value;
-        const id_GCS_sekarang = document.getElementById("id_GCS_sekarang").value;
-        const id_tekanan_darah_masuk = document.getElementById("id_tekanan_darah_masuk").value;
-        const id_tekanan_darah_sekarang = document.getElementById("id_tekanan_darah_sekarang").value;
-        const id_nadi_masuk = document.getElementById("id_nadi_masuk").value;
-        const id_nadi_sekarang = document.getElementById("id_nadi_sekarang").value;
-        const id_rr_masuk = document.getElementById("id_rr_masuk").value;
-        const id_rr_sekarang = document.getElementById("id_rr_sekarang").value;
-        const id_suhu_masuk = document.getElementById("id_suhu_masuk").value;
-        const id_suhu_sekarang = document.getElementById("id_suhu_sekarang").value;
-        const id_pemeriksaan_fisik = document.getElementById("id_pemeriksaan_fisik").value;
-
+      const namaPasien = document.getElementById('nama_Pasien').value;
+      const ruangan = document.getElementById('ruangan').value;
+      const noRekamMedis = document.getElementById('no_rekam_medis').value;
+      const tanggalLahir = document.getElementById('tanggal_lahir').value;
+      const jenisKelamin = document.querySelector('input[name="jenis_kelamin"]:checked').value;
+      const beratBadan = document.getElementById('berat_badan').value;
+      const tanggalMRS = document.getElementById('tanggal_mrs').value;
+      const diagnosis = document.getElementById('diagnosis').value;
 
       // Add header image (replace with your image URL)
       const imgUrl = "https://i.ibb.co.com/ZVjH49t/Stempel-PPRA.png"; // Add the actual image URL
-      const imgWidth = 25; // Adjust the width
-      const imgHeight = 25; // Adjust the height
-      doc.addImage(imgUrl, 'PNG', 25, 20, imgWidth, imgHeight);
-      doc.setFontSize(12);
-      doc.text("YAYASAN ELISABETH GRUYTERS", 60, 25);
-      doc.text("RUMAH SAKIT ST. CAROLUS BORROMEUS", 60, 30);
-      doc.text("Jalan HR Koroh, KM.08. Bello Kupang", 60, 35);
-      doc.text("Tlp. (0380) 8438508, E-mail: rscbkupang@gmail.com", 60, 45);
+      const imgWidth = 40; // Adjust the width
+      const imgHeight = 40; // Adjust the height
+      doc.addImage(imgUrl, 'PNG', 10, 10, imgWidth, imgHeight);
 
-      doc.line(20, 50, 200, 50);
+      // Add header text
+      doc.setFontSize(12);
+      doc.text("YAYASAN ELISABETH GRUYTERS", 60, 15);
+      doc.text("RUMAH SAKIT ST. CAROLUS BORROMEUS", 60, 20);
+      doc.text("Jalan HR Koroh, KM.08. Bello Kupang", 60, 25);
+      doc.text("Tlp. (0380) 8438508, E-mail: rscbkupang@gmail.com", 60, 30);
 
       // Add form title
       doc.setFontSize(14);
-      doc.text("FORMULIR PERMINTAAN ANTIMIKROBA GOLONGAN RESERVE", 30, 60);
+      doc.text("FORMULIR PERMINTAAN ANTIMIKROBA PENGENDALIAN KHUSUS", 20, 50);
 
       // Add form fields with interpolated data
       doc.setFontSize(12);
-      doc.text(`Nama DPJP      : ${id_nama_dpjp}`, 20, 70);
-      doc.text(`Nama Pasien    : ${id_nama_pasien}`, 20, 80);
-      doc.text(`Tanggal Lahir    : ${id_tanggal_lahir}`, 20, 90);
-      doc.text(`Jenis Kelamin       : ${id_jenis_kelamin}`, 110, 90);
-      doc.text(`Berat Badan      : ${id_berat_badan} Kg`, 20, 100);
-      doc.text(`No. Rekam Medis : ${id_no_rekam_medis}`, 110, 100);
-      doc.text(`Tanggal MRS    : ${id_tanggal_mrs}`, 20, 110);
-      doc.text(`Ruangan              : ${id_ruangan}`, 110, 110);
-      doc.text(`Diagnosis           : ${id_diagnosis}`, 20, 120);
-      doc.text(`Kode ICD-10         : ${id_kode_ICD}`, 110, 120);
-      doc.text(`Penyakit Penyerta  : ${id_penyakit_penyerta}`, 20, 130);
-      doc.text(`Anamnesis Singkat : ${id_kondisi_saat_ini}`, 20, 150);
-      doc.text(`Keadaan Umum : ${id_keadaan_umum}`, 20, 180);
+      doc.text(`Nama DPJP : ${namaDPJP}`, 20, 60);
+      doc.text(`Nama Pasien : ${namaPasien}`, 20, 70);
+      doc.text(`Ruangan : ${ruangan}`, 20, 80);
+      doc.text(`No. Rekam Medis : ${noRekamMedis}`, 20, 90);
+      doc.text(`Tanggal Lahir : ${tanggalLahir}`, 20, 100);
+      doc.text(`Jenis Kelamin : ${jenisKelamin}`, 20, 110);
+      doc.text(`Berat Badan : ${beratBadan} Kg`, 20, 120);
+      doc.text(`Tanggal MRS : ${tanggalMRS}`, 20, 130);
+      doc.text(`Diagnosis : ${diagnosis}`, 20, 140);
+
+      // Add table headers
+      doc.text("Keadaan Umum :", 20, 160);
+      doc.text("Compos mentis / somnolen / stupor / koma / lain", 60, 160);
+      doc.text("Tanda Vital", 20, 170);
 
       // Add table for vital signs
       doc.autoTable({
-        startY: 185,
-        head: [['Tanda Vital', 'Saat Masuk', 'Sekarang']],
+        startY: 180,
+        head: [['Tanda Vital', 'Pertama', 'Kemarin', 'Hari Ini']],
         body: [
-        ['GCS', id_GCS_masuk, id_GCS_sekarang],  
-        ['Tekanan Darah', id_tekanan_darah_masuk + ' mmHg', id_tekanan_darah_sekarang + ' mmHg'],
-        ['Nadi', id_nadi_masuk + ' x/menit', id_nadi_sekarang + ' x/menit'],
-        ['RR', id_rr_masuk + ' x/menit', id_rr_sekarang + ' x/menit'],
-        ['Suhu', id_suhu_masuk + ' °C', id_suhu_sekarang + ' °C']
+          ['Tekanan Darah', '', '', ''],
+          ['Nadi', '', '', ''],
+          ['RR', '', '', ''],
+          ['Suhu', '', '', '']
         ],
         theme: 'grid',
         styles: { fontSize: 12 }
@@ -722,15 +706,16 @@
 
       // Add additional text fields
       const tableEndPos = doc.lastAutoTable.finalY;
-      doc.text(`Pemeriksaan Fisik : ${id_pemeriksaan_fisik}`, 20, tableEndPos + 10);
+      doc.text("Kondisi saat ini :", 20, tableEndPos + 10);
+      doc.text("Penyakit Penyerta :", 20, tableEndPos + 30);
 
       // Add checkbox and table section
-      doc.text("Pasien Rujukan : Ya    Tidak    Nama RS :", 20, tableEndPos + 90);
-      doc.text("Riwayat Antimikroba sebelumnya / saat ini : Ya    Tidak", 20, tableEndPos + 100);
+      doc.text("Pasien Rujukan : Ya    Tidak    Nama RS :", 20, tableEndPos + 50);
+      doc.text("Riwayat Antimikroba sebelumnya / saat ini : Ya    Tidak", 20, tableEndPos + 60);
 
       // Add table for antimicrobial details
       doc.autoTable({
-        startY: tableEndPos + 110,
+        startY: tableEndPos + 70,
         head: [['Antimikroba', 'Keterangan', 'Lanjut / Stop', 'Stop Tanggal', 'Lama Pemakaian']],
         body: [
           ['1. Jenis Antimikroba', '', '', '', ''],
@@ -743,7 +728,7 @@
 
       // Save the PDF
       
-      const fileName = `${id_no_rekam_medis} ${id_nama_pasien} - Formulir Permintaan Antimikroba Reserve.pdf`;
+    const fileName = ` ${noRekamMedis} - ${namaPasien} Formulir Permintaan Antimikroba Reserve.pdf`;
     doc.save(fileName);
     }
 

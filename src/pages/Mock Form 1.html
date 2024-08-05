@@ -643,8 +643,8 @@
       const doc = new jsPDF();
 
       // Collect form data specifically for namaDPJP
-      const sel = document.getElementById('id_nama_dpjp');
-      const id_nama_dpjp = sel.value;
+        const sel = document.getElementById('id_nama_dpjp');
+        const id_nama_dpjp = sel.value;
 
       // Collect form data
       const id_nama_pasien = document.getElementById("id_nama_pasien").value;
@@ -671,12 +671,13 @@
         const id_suhu_sekarang = document.getElementById("id_suhu_sekarang").value;
         const id_pemeriksaan_fisik = document.getElementById("id_pemeriksaan_fisik").value;
 
-
       // Add header image (replace with your image URL)
       const imgUrl = "https://i.ibb.co.com/ZVjH49t/Stempel-PPRA.png"; // Add the actual image URL
       const imgWidth = 25; // Adjust the width
       const imgHeight = 25; // Adjust the height
       doc.addImage(imgUrl, 'PNG', 25, 20, imgWidth, imgHeight);
+
+      // Add header text
       doc.setFontSize(12);
       doc.text("YAYASAN ELISABETH GRUYTERS", 60, 25);
       doc.text("RUMAH SAKIT ST. CAROLUS BORROMEUS", 60, 30);
@@ -743,7 +744,7 @@
 
       // Save the PDF
       
-      const fileName = `${id_no_rekam_medis} ${id_nama_pasien} - Formulir Permintaan Antimikroba Reserve.pdf`;
+    const fileName = `${id_no_rekam_medis} ${id_nama_pasien} - Formulir Permintaan Antimikroba Reserve.pdf`;
     doc.save(fileName);
     }
 
