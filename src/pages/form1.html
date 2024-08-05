@@ -26,16 +26,17 @@
             <img src="../assets/logo_ppra.png" style="max-width: 180px; height: auto;" alt="Logo Tim PPRA">
             <br>
             <br>
-            <p class="title is-4">Formulir Permintaan Antimikroba <i>Access</i> dan <i>Reserve</i>
+            <p class="title is-4">Formulir Permintaan Antimikroba Golongan <i>Reserve</i>
             <p class="subtitle">Rumah Sakit St. Carolus Borromeus - RSCB Kupang</h1></p>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="columns is-centered">
+      
             <form id="form" class="container m-2 pl-2" method="POST">
                 <div class="box">
+                    <div class="columns is-centered">
                 <div class="field">
                     <label class="label">Nama DPJP:</label>
                     <div class="control">
@@ -182,13 +183,20 @@
             </div>
 
             <div class="field">
+                <label class="label">Anamnesis Singkat:</label>
+                <div class="control">
+                    <textarea class="textarea" name="kondisi_saat_ini"></textarea>
+                </div>
+            </div>
+
+            <div class="field">
                 <label class="label">Keadaan Umum:</label>
                 <div class="control">
                     <div class="select">
                         <select name="keadaan_umum" class="input" id="keadaan_umum" required>
                             <option value="sakit_ringan">Tampak Sakit Ringan</option>
-                            <option value="sakit_sedang">Tampak Sakit Berat</option>
-                            <option value="sakit_berat">Tampak Sakit Sedang</option>
+                            <option value="sakit_sedang">Tampak Sakit Sedang</option>
+                            <option value="sakit_berat">Tampak Sakit Berat</option>
                         </select>
                     </div>
                 </div>
@@ -239,15 +247,17 @@
             </div>
 
             <div class="field">
-                <label class="label">Riwayat Anamnesis dan Pemeriksaan Fisik:</label>
+                <label class="label">Pemeriksaan Fisik:</label>
                 <div class="control">
                     <textarea class="textarea" name="kondisi_saat_ini"></textarea>
                 </div>
             </div>
 
-            </div>
+        </div>
+        </div>
 
             <div class="box">
+                <div class="columns is-centered">
                 <h2 class="subtitle">Riwayat Antimikroba Sebelumnya</h2>
             <div class="field">
                 <label class="label">Pasien Rujukan:</label>
@@ -267,7 +277,7 @@
                     <input type="text" class="input" name="nama_rs">
                 </div>
             </div>
-
+            <br>
             <div class="field">
                 <label class="label">Riwayat Antimikroba sebelumnya / saat ini:</label>
                 <div class="control">
@@ -362,13 +372,14 @@
                 </tbody>
             </table>
             </div>
+            </div>
 
             <!-- Continue replacing remaining fields with Bulma classes as needed -->
 
             </div>
             <div class="box">
+                <div class="columns is-centered">
                 <h2 class="subtitle">Hasil Penunjang:</h2>
-                <br>
             <div class="field">
                 <label class="label">Hasil Kultur:</label>
                 <div class="control">
@@ -395,8 +406,7 @@
                 </div>
             </div>
 
-            <h4><b>Hasil Pengambilan Kultur</b></h4>
-            <br>
+            <label>Hasil Pengambilan Kultur</label>
             <table class="table is-bordered is-fullwidth">
                 <thead>
                     <tr>
@@ -417,8 +427,7 @@
                 </tbody>
             </table>
 
-            <h4><b>Hasil Laboratorium</b></h4>
-            <br>
+            <label class="label">Hasil Laboratorium</label>
             <table class="table is-bordered is-fullwidth">
                 <thead>
                     <tr>
@@ -432,9 +441,9 @@
                     <tr>
                         <td>Darah Lengkap</td>
                         <td>
-                            <label class="radio"><input type="radio" name="darah_lengkap_ada" value="Ada" id='darah_lengkap_ada'> Ada</label>
+                            <label class="radio"><input type="radio" name="darah_lengkap_ada" value="Ada" id='darah_lengkap_ada' required> Ada</label>
                             <br>
-                            <label class="radio"><input type="radio" name="darah_lengkap_ada" value="Tidak" id='darah_lengkap_ada'> Tidak</label>
+                            <label class="radio"><input type="radio" name="darah_lengkap_ada" value="Tidak" id='darah_lengkap_ada' required> Tidak</label>
                         </td>
                         <td><input type="date" class="input" name="darah_lengkap_tanggal"></td>
                         
@@ -443,9 +452,9 @@
                     <tr>
                         <td>Urine Lengkap</td>
                         <td>
-                            <label class="radio"><input type="radio" name="urine_lengkap_ada" value="Ada" id='urine_lengkap_ada'> Ada</label>
+                            <label class="radio"><input type="radio" name="urine_lengkap_ada" value="Ada" id='urine_lengkap_ada' required> Ada</label>
                             <br>
-                            <label class="radio"><input type="radio" name="urine_lengkap_ada" value="Tidak" id='urine_lengkap_ada'> Tidak</label>
+                            <label class="radio"><input type="radio" name="urine_lengkap_ada" value="Tidak" id='urine_lengkap_ada' required> Tidak</label>
                         </td>
                         <td><input type="date" class="input" name="urine_lengkap_tanggal"></td>
                         <td><textarea class="textarea" name="urine_lengkap_hasil"></textarea></td>
@@ -453,9 +462,9 @@
                     <tr>
                         <td>CRP</td>
                         <td>
-                            <label class="radio"><input type="radio" name="crp_ada" value="Ada" id='crp_ada'> Ada</label>
+                            <label class="radio"><input type="radio" name="crp_ada" value="Ada" id='crp_ada' required> Ada</label>
                             <br>
-                            <label class="radio"><input type="radio" name="crp_ada" value="Tidak" id='crp_ada'> Tidak</label>
+                            <label class="radio"><input type="radio" name="crp_ada" value="Tidak" id='crp_ada' required> Tidak</label>
                         </td>
                         <td><input type="date" class="input" name="crp_tanggal"></td>
                         <td><textarea class="textarea" name="crp_hasil"></textarea></td>
@@ -463,9 +472,9 @@
                     <tr>
                         <td>Prokalsitonin</td>
                         <td>
-                            <label class="radio"><input type="radio" name="prokalsitonin_ada" value="Ada" id='prokalsitonin_ada'> Ada</label>
+                            <label class="radio"><input type="radio" name="prokalsitonin_ada" value="Ada" id='prokalsitonin_ada' required> Ada</label>
                             <br>
-                            <label class="radio"><input type="radio" name="prokalsitonin_ada" value="Tidak" id='prokalsitonin_ada'> Tidak</label>
+                            <label class="radio"><input type="radio" name="prokalsitonin_ada" value="Tidak" id='prokalsitonin_ada' required> Tidak</label>
                         </td>
                         <td><input type="date" class="input" name="prokalsitonin_tanggal"></td>
                         <td><textarea class="textarea" name="prokalsitonin_hasil"></textarea></td>
@@ -474,7 +483,7 @@
                 </tbody>
             </table>
 
-            <h4>Hasil Pemeriksaan Radiologi / Penunjang lain</h4>
+            <label class="label">Hasil Pemeriksaan Radiologi / Penunjang lain</label>
             <table class="table is-bordered is-fullwidth">
                 <thead>
                     <tr>
@@ -502,6 +511,8 @@
                     <!-- Repeat similar rows for other radiological examinations -->
                 </tbody>
             </table>
+            </div>
+            </div>
 
                 <div class="field is-grouped">
                     <div class="control">
