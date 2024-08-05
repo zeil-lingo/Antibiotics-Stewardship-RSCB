@@ -33,7 +33,7 @@
     </section>
 
     <section class="section">
-        <div class="columns is-centered">
+        <div class="columns is-centered is-half">
         <div class="box">
             <form id="form" class="container m-2 pl-2" method="POST">
                 
@@ -248,9 +248,12 @@
             <div class="field">
                 <label class="label">Pemeriksaan Fisik:</label>
                 <div class="control">
-                    <textarea class="textarea" name="kondisi_saat_ini"></textarea>
+                    <textarea class="textarea" name="pemeriksaan_fisik"></textarea>
                 </div>
             </div>
+
+            <br>
+            <hr>
             <br>
 
             <h2 class="subtitle">Riwayat Antimikroba Sebelumnya</h2>
@@ -269,7 +272,7 @@
             <div class="field">
                 <label class="label">Nama RS Rujukan:</label>
                 <div class="control">
-                    <input type="text" class="input" name="nama_rs">
+                    <input type="text" class="input" name="nama_rs_rujukan">
                 </div>
             </div>
             <br>
@@ -289,32 +292,56 @@
             <table class="table is-bordered is-fullwidth">
                 <thead>
                     <tr>
-                        <th>Antimikroba</th>
-                        <th>Keterangan</th>
-                        <th>Stop Tanggal</th>
-                        <th>Lama Pemakaian</th>
+                        <th>Antimikroba Sebelumnya</th>
+                        <th>Tanggal Pertama Pemberian</th>
+                        <th>Dosis Per Pemberian:</th>
+                        <th>Pemberian Per Hari</th>
+                        <th>Durasi Pemberian</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input type="text" class="input" name="antimikroba_1"></td>
-                        <td><input type="text" class="input" name="keterangan_1"></td>
-                        <td><input type="date" class="input" name="stop_tanggal_1"></td>
-                        <td><input type="text" class="input" name="lama_pemakaian_1"></td>
+                        <td><input type="text" class="input" name="riw_antimikroba_1_nama"></td>
+                        <td><input type="date" class="input" name="riw_antimikroba_1_tanggal"></td>
+                        <td><input type="number" class="input" name="riw_antimikroba_1_dosis" placeholder="dalam mg"></td>
+                        <td><div class="select">
+                            <select name="riw_antimikroba_1_per_hari" class="input" id="riw_antimikroba_1_per_hari" required>
+                                <option value="OD">Once Daily (1x1)</option>
+                                <option value="BD">Twice Daily (2x1)</option>
+                                <option value="TID">Thrice Daily (3x1)</option>
+                                <option value="QID">Four Times Daily (4x1)</option>
+                            </select> </td>
+                        <td><input type="number" class="input" name="riw_antimikroba_1_durasi" placeholder="dalam hari"></td>
                     </tr>
 
                     <tr>
-                        <td><input type="text" class="input" name="antimikroba_2"></td>
-                        <td><input type="text" class="input" name="keterangan_2"></td>
-                        <td><input type="date" class="input" name="stop_tanggal_2"></td>
-                        <td><input type="text" class="input" name="lama_pemakaian_2"></td>
+                        <td><input type="text" class="input" name="riw_antimikroba_2_nama"></td>
+                        <td><input type="date" class="input" name="riw_antimikroba_2_tanggal"></td>
+                        <td><input type="number" class="input" name="riw_antimikroba_2_dosis" placeholder="dalam mg"></td>
+                        <td><div class="select">
+                            <select name="riw_antimikroba_2_per_hari" class="input" id="riw_antimikroba_2_per_hari" required>
+                                <option value="OD">Once Daily (1x1)</option>
+                                <option value="BD">Twice Daily (2x1)</option>
+                                <option value="TID">Thrice Daily (3x1)</option>
+                                <option value="QID">Four Times Daily (4x1)</option>
+                            </select>   
+                        </td>
+                        <td><input type="number" class="input" name="riw_antimikroba_2_durasi" placeholder="dalam hari"></td>
                     </tr>
 
                     <tr>
-                        <td><input type="text" class="input" name="antimikroba_3"></td>
-                        <td><input type="text" class="input" name="keterangan_3"></td>
-                        <td><input type="date" class="input" name="stop_tanggal_3"></td>
-                        <td><input type="text" class="input" name="lama_pemakaian_3"></td>
+                        <td><input type="text" class="input" name="riw_antimikroba_3_nama"></td>
+                        <td><input type="date" class="input" name="riw_antimikroba_3_tanggal"></td>
+                        <td><input type="number" class="input" name="riw_antimikroba_3_dosis" placeholder="dalam mg"></td>
+                        <td><div class="select">
+                            <select name="riw_antimikroba_3_per_hari" class="input" id="riw_antimikroba_3_per_hari" required>
+                                <option value="OD">Once Daily (1x1)</option>
+                                <option value="BD">Twice Daily (2x1)</option>
+                                <option value="TID">Thrice Daily (3x1)</option>
+                                <option value="QID">Four Times Daily (4x1)</option>
+                            </select>   
+                        </td>
+                        <td><input type="number" class="input" name="riw_antimikroba_3_durasi" placeholder="dalam hari"></td>
                     </tr>
                 </tbody>
             </table>
@@ -327,7 +354,7 @@
                         <td>Nama Antimikroba</td>
                         <td>
                             <div class="select">
-                                <select name="nama_antimikroba_1" class="input" id="nama_antimikroba_1" required>
+                                <select name="permintaan_antimikroba_1_nama" class="input" id="permintaan_antimikroba_1_nama" required>
                                     <option value="Meropenem">Meropenem</option>
                                     <option value="Ceftazidime">Ceftazidime</option>
                                 </select>                        
@@ -335,32 +362,33 @@
                     </tr>
                     <tr>
                         <td>Dosis Per Pemberian:</td>
-                        <td><input type="number" class="input" name="dosis_1" placeholder="dalam mg" required></td>
+                        <td><input type="number" class="input" name="permintaan_antimikroba_dosis_1" placeholder="dalam mg" required></td>
                     </tr>
                     <tr>
                         <td>Pemberian Per Hari:</td>
                         <td>
                             <div class="select">
-                                <select name="per_hari_1" class="input" id="per_hari_1" required>
+                                <select name="permintaan_antimikroba_hari_1" class="input" id="permintaan_antimikroba_hari_1" required>
                                     <option value="OD">Once Daily (1x1)</option>
                                     <option value="BD">Twice Daily (2x1)</option>
                                     <option value="TID">Thrice Daily (3x1)</option>
                                     <option value="QID">Four Times Daily (4x1)</option>
                                 </select>   
+                            </div>
                     </tr>
                     <tr>
                         <td>Perkiraan Durasi Pemberian:</td>
-                        <td><input type="text" class="input" name="durasi_1" placeholder="dalam hari"></td>
+                        <td><input type="text" class="input" name="permintaan_antimikroba_1_durasi" placeholder="dalam hari"></td>
                     </tr>
                     <tr>
                         <td>Indikasi</td>
                         <td>
                             <label class="indikasi_1">
-                                <input type="radio" name="indikasi_1" value="Profilaksis" id="'indikasi_1" required> Profilaksis
+                                <input type="radio" name="permintaan_antimikroba_1_indikasi" value="Profilaksis" id="'permintaan_antimikroba_1_indikasi" required> Profilaksis
                             </label>
                             <br>
                             <label class="indikasi_1">
-                                <input type="radio" name="indikasi_1" value="Terapi" id="'indikasi_1" required> Terapi
+                                <input type="radio" name="permintaan_antimikroba_1_indikasi" value="Terapi" id="permintaan_antimikroba_1_indikasi" required> Terapi
                             </label>
                         </td>    
                     </tr>
@@ -371,23 +399,28 @@
 
             <!-- Continue replacing remaining fields with Bulma classes as needed -->
 
+            <br>
+            <hr>
+            <br>
+
+
                 <h2 class="subtitle">Hasil Penunjang:</h2>
             <div class="field">
                 <label class="label">Hasil Kultur:</label>
                 <div class="control">
                     <label class="radio">
-                        <input class="radio" type="radio" name="hasil_kultur" value="Ada">
+                        <input class="radio" type="radio" name="kultur_ada" value="Ada">
                         Ada, lampirkan copy hasil kultur
                     </label>
                     <br>
                     <label class="radio">
-                        <input class="radio" type="radio" name="hasil_kultur" value="Tidak Ada">
-                        Tidak Ada
+                        <input class="radio" type="radio" name="kultur_ada" value="Menunggu">
+                        Menunggu hasil
                     </label>
                     <br>
                     <label class="radio">
-                        <input class="radio" type="radio" name="hasil_kultur" value="Menunggu">
-                        Menunggu
+                        <input class="radio" type="radio" name="kultur_ada" value="Tidak Ada">
+                        Tidak Ada
                     </label>
                 </div>
             </div>
@@ -395,7 +428,7 @@
             <div class="field">
                 <label class="label">Tanggal Pengambilan Kultur:</label>
                 <div class="control">
-                    <input type="date" class="input" name="dikirim_tanggal">
+                    <input type="date" class="input" name="kultur_tanggal">
                 </div>
             </div>
 
@@ -411,10 +444,10 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input type="date" class="input" name="tanggal_kultur_1"></td>
-                        <td><input type="text" class="input" name="spesimen_1"></td>
-                        <td><input type="text" class="input" name="hasil_1"></td>
-                        <td><input type="text" class="input" name="ris_1"></td>
+                        <td><input type="date" class="input" name="kultur_hasil_tanggal"></td>
+                        <td><input type="text" class="input" name="kultur_hasil_spesimen"></td>
+                        <td><input type="text" class="input" name="kultur_hasil_akhir"></td>
+                        <td><input type="text" class="input" name="kultur_hasil_resistensi"></td>
                     </tr>
                     <!-- Repeat similar rows for other samples -->
                 </tbody>
@@ -487,19 +520,19 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input type="text" class="input" name="pemeriksaan_radiologi_1"></td>
-                        <td><input type="date" class="input" name="tanggal_radiologi_1"></td>
-                        <td><textarea class="textarea" name="hasil_radiologi_1"></textarea>
+                        <td><input type="text" class="input" name="radiologi_1_pemeriksaan"></td>
+                        <td><input type="date" class="input" name="radiologi_1_tanggal"></td>
+                        <td><textarea class="textarea" name="radiologi_1_hasil"></textarea>
                     </tr>
                     <tr>
-                        <td><input type="text" class="input" name="pemeriksaan_radiologi_2"></td>
-                        <td><input type="date" class="input" name="tanggal_radiologi_2"></td>
-                        <td><textarea class="textarea" name="hasil_radiologi_2"></textarea>
+                        <td><input type="text" class="input" name="radiologi_2_pemeriksaan"></td>
+                        <td><input type="date" class="input" name="radiologi_2_tanggal"></td>
+                        <td><textarea class="textarea" name="radiologi_2_hasil"></textarea>
                     </tr>
                     <tr>
-                        <td><input type="text" class="input" name="pemeriksaan_radiologi_3"></td>
-                        <td><input type="date" class="input" name="tanggal_radiologi_3"></td>
-                        <td><textarea class="textarea" name="hasil_radiologi_3"></textarea>
+                        <td><input type="text" class="input" name="radiologi_3_pemeriksaan"></td>
+                        <td><input type="date" class="input" name="radiologi_3_tanggal"></td>
+                        <td><textarea class="textarea" name="radiologi_3_hasil"></textarea>
                     </tr>
                     <!-- Repeat similar rows for other radiological examinations -->
                 </tbody>
