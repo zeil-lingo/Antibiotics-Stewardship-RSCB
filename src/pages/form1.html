@@ -547,7 +547,6 @@
             document.getElementById("message").style.color = "beige";
             document.getElementById("submit-button").disabled = false;
             document.getElementById("form").reset();
-            generatePDF()
 
             setTimeout(function () {
               document.getElementById("message").textContent = "";
@@ -561,8 +560,9 @@
             document.getElementById("message").textContent =
               "Sudah tersubmit! Mohon di-periksa kembali statusnya";
             document.getElementById("message").style.display = "block";
-            generatePDF()
           });
+          
+          generatePDF()
 
     function generatePDF() {
       const { jsPDF } = window.jspdf;
