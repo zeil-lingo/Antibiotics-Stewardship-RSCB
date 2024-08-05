@@ -34,13 +34,13 @@
 
     <section class="section">
       <div class="columns is-centered">
-      <div class="box">
             <form id="form" class="container m-2 pl-2" method="POST">
-
+                <div class="box">
+                    <h2 class="subtitle">Riwayat Klinis</h2>
                 <div class="field">
                     <label class="label">Nama DPJP:</label>
                     <div class="control">
-                        <input class="input" type="text" name="nama_dpjp" id="nama_DPJP" list="nama_dpjp_options">
+                        <input class="input" type="text" name="nama_dpjp" id="nama_DPJP" list="nama_dpjp_options" required>
                         <datalist id="nama_dpjp_options">
                             <option value="dr_danny_darmawan" label="dr. Danny Darmawan, Sp. PD">dr. Danny Darmawan, Sp. PD</option>
                             <option value="dr_heri_sutrisno" label="dr. Heri Sutrisno, Sp.PD - KHO">dr. Heri Sutrisno, Sp.PD - KHO</option>
@@ -75,6 +75,7 @@
                     class="input" 
                     name="nama_pasien" 
                     id="nama_Pasien"
+                    required
                     />
                 </div>
             </div>
@@ -83,7 +84,7 @@
                 <label class="label">Ruangan:</label>
                 <div class="control">
                     <div class="select">
-                        <select name="ruangan" class="input" id="ruangan">
+                        <select name="ruangan" class="input" id="ruangan" required>
                             <option value="IGD">IGD</option>
                             <option value="ICU">ICU</option>
                             <option value="Poli">Poli</option>
@@ -103,7 +104,8 @@
                     type="text" 
                     class="input" 
                     name="no_rekam_medis"
-                    id="no_rekam_medis">
+                    id="no_rekam_medis"
+                    required>
                 </div>
             </div>
 
@@ -135,21 +137,36 @@
                     id="berat_badan"
                     name="berat_badan" 
                     step="0.1"
-                    placeholder="Dalam Kg">
+                    placeholder="Dalam Kg"
+                    required>
                 </div>
             </div>
 
             <div class="field">
                 <label class="label">Tanggal MRS:</label>
                 <div class="control">
-                    <input type="date" class="input" name="tanggal_mrs" id="tanggal_mrs">
+                    <input type="date" class="input" name="tanggal_mrs" id="tanggal_mrs" required>
                 </div>
             </div>
 
             <div class="field">
                 <label class="label">Diagnosis:</label>
                 <div class="control">
-                    <textarea class="textarea" name="diagnosis" id="diagnosis"></textarea>
+                    <input class="text" name="diagnosis" id="diagnosis" required></input>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Kode ICD-10:</label>
+                <div class="control">
+                    <input class="text" name="kode_ICD" id="kode_ICD" required></input>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Penyakit Penyerta:</label>
+                <div class="control">
+                    <textarea class="textarea" name="penyakit_penyerta"></textarea>
                 </div>
             </div>
 
@@ -166,67 +183,57 @@
                 <thead>
                     <tr>
                         <th>Tanda Vital</th>
-                        <th>Pertama</th>
-                        <th>Kemarin</th>
-                        <th>Hari Ini</th>
+                        <th>Saat Masuk</th>
+                        <th>Sekarang</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Tekanan Darah</td>
-                        <td><input type="text" class="input" name="tekanan_darah_pertama"></td>
-                        <td><input type="text" class="input" name="tekanan_darah_kemarin"></td>
-                        <td><input type="text" class="input" name="tekanan_darah_hari_ini"></td>
+                        <td><input type="text" class="input" name="tekanan_darah_masuk" required></td>
+                        <td><input type="text" class="input" name="tekanan_darah_sekarang" required></td>
                     </tr>
 
                     <tr>
                         <td>Nadi</td>
-                        <td><input type="text" class="input" name="nadi_pertama"></td>
-                        <td><input type="text" class="input" name="nadi_kemarin"></td>
-                        <td><input type="text" class="input" name="nadi_hari_ini"></td>
+                        <td><input type="text" class="input" name="nadi_masuk" required></td>
+                        <td><input type="text" class="input" name="nadi_sekarang" required></td>
                     </tr>
 
                     <tr>
                         <td>RR</td>
-                        <td><input type="text" class="input" name="rr_pertama"></td>
-                        <td><input type="text" class="input" name="rr_kemarin"></td>
-                        <td><input type="text" class="input" name="rr_hari_ini"></td>
+                        <td><input type="text" class="input" name="rr_masuk" required></td>
+                        <td><input type="text" class="input" name="rr_sekarang" required></td>
                     </tr>
                 
                     <tr>
                         <td>Suhu</td>
-                        <td><input type="text" class="input" name="suhu_pertama"></td>
-                        <td><input type="text" class="input" name="suhu_kemarin"></td>
-                        <td><input type="text" class="input" name="suhu_hari_ini"></td>
+                        <td><input type="text" class="input" name="suhu_masuk" required></td>
+                        <td><input type="text" class="input" name="suhu_sekarang" required></td>
                     </tr>
                 </tbody>
             </table>
             </div>
 
             <div class="field">
-                <label class="label">Kondisi saat ini:</label>
+                <label class="label">Anamnesis:</label>
                 <div class="control">
                     <textarea class="textarea" name="kondisi_saat_ini"></textarea>
                 </div>
             </div>
 
-            <div class="field">
-                <label class="label">Penyakit Penyerta:</label>
-                <div class="control">
-                    <textarea class="textarea" name="penyakit_penyerta"></textarea>
-                </div>
             </div>
 
+            <div class="box">
+                <h2 class="subtitle">Riwayat Antimikroba Sebelumnya</h2>
             <div class="field">
                 <label class="label">Pasien Rujukan:</label>
                 <div class="control">
-                    <label class="checkbox">
-                        <input type="checkbox" name="pasien_rujukan" value="Ya">
-                        Ya
+                    <label class="radio">
+                        <input type="radio" name="pasien_rujukan" value="Ya" required> Ya
                     </label>
-                    <label class="checkbox">
-                        <input type="checkbox" name="pasien_rujukan" value="Tidak">
-                        Tidak
+                    <label class="radio">
+                        <input type="radio" name="pasien_rujukan" value="Tidak" required> Tidak
                     </label>
                 </div>
             </div>
@@ -241,18 +248,15 @@
             <div class="field">
                 <label class="label">Riwayat Antimikroba sebelumnya / saat ini:</label>
                 <div class="control">
-                    <label class="checkbox">
-                        <input type="checkbox" name="riwayat_antimikroba" value="Ya">
-                        Ya
+                    <label class="radio">
+                        <input type="radio" name="riwayat_antimikroba" value="Ya"> Ya
                     </label>
-                    <label class="checkbox">
-                        <input type="checkbox" name="riwayat_antimikroba" value="Tidak">
-                        Tidak
+                    <label class="radio">
+                        <input type="radio" name="riwayat_antimikroba" value="Tidak"> Tidak
                     </label>
                 </div>
             </div>
 
-            <h4>Antimikroba</h4>
             <table class="table is-bordered is-fullwidth">
                 <thead>
                     <tr>
@@ -293,47 +297,26 @@
                     <tr>
                         <th></th>
                         <th>Antimikroba 1</th>
-                        <th>Antimikroba 2</th>
-                        <th>Antimikroba 3</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Nama Antimikroba</td>
                         <td><input type="text" class="input" name="nama_antimikroba_1"></td>
-                        <td><input type="text" class="input" name="nama_antimikroba_2"></td>
-                        <td><input type="text" class="input" name="nama_antimikroba_3"></td>
                     </tr>
                     <tr>
                         <td>Regimen (Dosis / Cara / Saat / Lama)</td>
                         <td><input type="text" class="input" name="regimen_1"></td>
-                        <td><input type="text" class="input" name="regimen_2"></td>
-                        <td><input type="text" class="input" name="regimen_3"></td>
                     </tr>
                     <tr>
                         <td>Indikasi</td>
                         <td>
                             <label class="indikasi_1">
-                                <input type="radio" name="indikasi_1" value="Profilaksis" id="'indikasi_1" required>Profilaksis
+                                <input type="radio" name="indikasi_1" value="Profilaksis" id="'indikasi_1" required> Profilaksis
                             </label>
+                            <br>
                             <label class="indikasi_1">
-                                <input type="radio" name="indikasi_1" value="Terapi" id="'indikasi_1" required>Terapi
-                            </label>
-                        </td>    
-                        <td>
-                            <label class="indikasi_2">
-                                <input type="radio" name="indikasi_2" value="Profilaksis" id="'indikasi_2" required>Profilaksis
-                            </label>
-                            <label class="indikasi_2">
-                                <input type="radio" name="indikasi_2" value="Terapi" id="'indikasi_2" required>Terapi
-                            </label>
-                        </td>    
-                        <td>
-                            <label class="indikasi_3">
-                                <input type="radio" name="indikasi_3" value="Profilaksis" id="'indikasi_3" required>Profilaksis
-                            </label>
-                            <label class="indikasi_3">
-                                <input type="radio" name="indikasi_3" value="Terapi" id="'indikasi_3" required>Terapi
+                                <input type="radio" name="indikasi_1" value="Terapi" id="'indikasi_1" required> Terapi
                             </label>
                         </td>    
                     </tr>
@@ -344,32 +327,37 @@
 
             <!-- Continue replacing remaining fields with Bulma classes as needed -->
 
-
-            <h4>Laboratorium Mikrobiologi saat ini</h4>
+            </div>
+            <div class="box">
+                <h3><b>Hasil Pemeriksaan Penunjang:</b></h3>
+                <br>
             <div class="field">
                 <label class="label">Hasil Kultur:</label>
                 <div class="control">
-                    <label class="checkbox">
-                        <input class="checkbox" type="checkbox" name="hasil_kultur" value="Ada">
+                    <label class="radio">
+                        <input class="radio" type="radio" name="hasil_kultur" value="Ada">
                         Ada, lampirkan copy hasil kultur
                     </label>
-                    <label class="checkbox">
-                        <input class="checkbox" type="checkbox" name="hasil_kultur" value="Tidak Ada">
+                    <br>
+                    <label class="radio">
+                        <input class="radio" type="radio" name="hasil_kultur" value="Tidak Ada">
                         Tidak Ada
                     </label>
-                    <label class="checkbox">
-                        <input class="checkbox" type="checkbox" name="hasil_kultur" value="Menunggu">
+                    <br>
+                    <label class="radio">
+                        <input class="radio" type="radio" name="hasil_kultur" value="Menunggu">
                         Menunggu
                     </label>
                 </div>
             </div>
             <div class="field">
-                <label class="label">Dikirim tanggal:</label>
+                <label class="label">Tanggal Pengambilan Kultur:</label>
                 <div class="control">
                     <input type="date" class="input" name="dikirim_tanggal">
                 </div>
             </div>
 
+            <h3><b>Hasil Pengambilan Kultur</b></h3>
             <table class="table is-bordered is-fullwidth">
                 <thead>
                     <tr>
@@ -390,40 +378,56 @@
                 </tbody>
             </table>
 
-            <h4>Hasil Laboratorium</h4>
+            <h3><b>Hasil Laboratorium</b></h3>
             <table class="table is-bordered is-fullwidth">
                 <thead>
                     <tr>
                         <th>Pemeriksaan</th>
+                        <th>Ada?</th>
                         <th>Tanggal</th>
-                        <th>Tanggal</th>
-                        <th>Tanggal</th>
+                        <th>Hasil</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Darah Lengkap</td>
-                        <td><input type="date" class="input" name="darah_lengkap_1"></td>
-                        <td><input type="date" class="input" name="darah_lengkap_2"></td>
-                        <td><input type="date" class="input" name="darah_lengkap_3"></td>
+                        <td><input type="date" class="input" name="darah_lengkap_tanggal"></td>
+                        <td>
+                            <label class="radio"><input type="radio" name="darah_lengkap_ada" value="Ada" id='darah_lengkap_ada'> Ada</label>
+                            <br>
+                            <label class="radio"><input type="radio" name="darah_lengkap_ada" value="Tidak" id='darah_lengkap_ada'> Tidak</label>
+                        </td>
+                        <td><textarea class="textarea" name="darah_lengkap_hasil"></td>
                     </tr>
                     <tr>
                         <td>Urine Lengkap</td>
-                        <td><input type="date" class="input" name="urine_lengkap_1"></td>
-                        <td><input type="date" class="input" name="urine_lengkap_2"></td>
-                        <td><input type="date" class="input" name="urine_lengkap_3"></td>
+                        <td><input type="date" class="input" name="urine_lengkap_tanggal"></td>
+                        <td>
+                            <label class="radio"><input type="radio" name="urine_lengkap_ada" value="Ada" id='urine_lengkap_ada'> Ada</label>
+                            <br>
+                            <label class="radio"><input type="radio" name="urine_lengkap_ada" value="Tidak" id='urine_lengkap_ada'> Tidak</label>
+                        </td>
+                        <td><textarea class="textarea" name="urine_lengkap_hasil"></td>
                     </tr>
                     <tr>
                         <td>CRP</td>
-                        <td><input type="date" class="input" name="CRP_lengkap_1"></td>
-                        <td><input type="date" class="input" name="CRP_lengkap_2"></td>
-                        <td><input type="date" class="input" name="CRP_lengkap_3"></td>
+                        <td><input type="date" class="input" name="crp_tanggal"></td>
+                        <td>
+                            <label class="radio"><input type="radio" name="crp_ada" value="Ada" id='crp_ada'> Ada</label>
+                            <br>
+                            <label class="radio"><input type="radio" name="crp_ada" value="Tidak" id='crp_ada'> Tidak</label>
+                        </td>
+                        <td><textarea class="textarea" name="crp_hasil"></td>
                     </tr>
                     <tr>
                         <td>Prokalsitonin</td>
-                        <td><input type="date" class="input" name="prokalsitonin_1"></td>
-                        <td><input type="date" class="input" name="prokalsitonin_2"></td>
-                        <td><input type="date" class="input" name="prokalsitonin_3"></td>
+                        <td><input type="date" class="input" name="prokalsitonin_tanggal"></td>
+                        <td>
+                            <label class="radio"><input type="radio" name="prokalsitonin_ada" value="Ada" id='prokalsitonin_ada'> Ada</label>
+                            <br>
+                            <label class="radio"><input type="radio" name="prokalsitonin_ada" value="Tidak" id='prokalsitonin_ada'> Tidak</label>
+                        </td>
+                        <td><textarea class="textarea" name="prokalsitonin_hasil"></td>
                     </tr>
                     <!-- Repeat similar rows for other examinations -->
                 </tbody>
@@ -442,17 +446,17 @@
                     <tr>
                         <td><input type="text" class="input" name="pemeriksaan_radiologi_1"></td>
                         <td><input type="date" class="input" name="tanggal_radiologi_1"></td>
-                        <td><input type="text" class="input" name="hasil_radiologi_1"></td>
+                        <td><textarea class="textarea" name="hasil_radiologi_1"></textarea>
                     </tr>
                     <tr>
                         <td><input type="text" class="input" name="pemeriksaan_radiologi_2"></td>
                         <td><input type="date" class="input" name="tanggal_radiologi_2"></td>
-                        <td><input type="text" class="input" name="hasil_radiologi_2"></td>
+                        <td><textarea class="textarea" name="hasil_radiologi_2"></textarea>
                     </tr>
                     <tr>
                         <td><input type="text" class="input" name="pemeriksaan_radiologi_3"></td>
                         <td><input type="date" class="input" name="tanggal_radiologi_3"></td>
-                        <td><input type="text" class="input" name="hasil_radiologi_3"></td>
+                        <td><textarea class="textarea" name="hasil_radiologi_3"></textarea>
                     </tr>
                     <!-- Repeat similar rows for other radiological examinations -->
                 </tbody>
@@ -561,7 +565,7 @@
               "Sudah tersubmit! Mohon di-periksa kembali statusnya";
             document.getElementById("message").style.display = "block";
           });
-          
+
           generatePDF()
 
     function generatePDF() {
@@ -655,7 +659,9 @@
       });
 
       // Save the PDF
-      doc.save('form.pdf');
+      
+    const fileName = `Formulir permintaan ${namaPasien}.pdf`;
+    doc.save(fileName);
     }
 
       });
