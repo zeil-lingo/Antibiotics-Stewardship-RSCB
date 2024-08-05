@@ -42,26 +42,27 @@
                     <div class="control">
                         <input class="input" type="text" name="nama_dpjp" id="nama_DPJP" list="nama_dpjp_options">
                         <datalist id="nama_dpjp_options">
-                            <option value="dr_danny_darmawan">dr. Danny Darmawan, Sp. PD</option>
-                            <option value="dr_heri_sutrisno">dr. Heri Sutrisno, Sp.PD - KHO</option>
-                            <option value="dr_jefri">dr. Jefri, Sp. PD</option>
-                            <option value="dr_stefany_adi">dr. Stefany Adi W., Sp.PD - KGH</option>
-                            <option value="dr_marlon">dr. Marlon, Sp.An TI</option>
-                            <option value="dr_telly_victorya">dr. Telly Victorya Kapitana, Sp.An TI</option>
-                            <option value="dr_samlek_sunbanu">dr. Samlek E. Sunbanu, Sp.A</option>
-                            <option value="dr_simplicia_m">Dr. dr. Simplicia M. A., Sp.A (K)</option>
-                            <option value="dr_tjahyo_s">dr. Tjahyo S., SpA</option>
-                            <option value="dr_setijo_halim">dr. Setijo Halim, Sp.B</option>
-                            <option value="dr_frida_silitonga">dr. Frida M. Silitonga, Sp.S</option>
-                            <option value="dr_olivia_wijaya">dr. Olivia J. Wijaya, Sp.N</option>
-                            <option value="dr_niva_wilujeng">dr. Niva Wilujeng, Sp. JP</option>
-                            <option value="dr_kristian_ratu">dr. Kristian Ratu, Sp.OG</option>
-                            <option value="dr_trisna_turwewi">dr. N. Trisna T. K. Turwewi, Sp. THT- KL</option>
-                            <option value="dr_made_tambunan">dr. Made P. Tambunan, Sp.U</option>
-                            <option value="dr_arian_d">dr. R. Arian D., Sp.BP-RE</option>
-                            <option value="dr_andre_sinambela">dr. Andre Tongam Palopor Sinambela, Sp. EM</option>
-                            <option value="drg_ellen_p">drg. Ellen S. P., SpBM</option>
-                            <option value="drg_revina_marpaung">drg. Revina Marpaung, SpKG</option>
+                            <option value="dr_danny_darmawan" label="dr. Danny Darmawan, Sp. PD">dr. Danny Darmawan, Sp. PD</option>
+                            <option value="dr_heri_sutrisno" label="dr. Heri Sutrisno, Sp.PD - KHO">dr. Heri Sutrisno, Sp.PD - KHO</option>
+                            <option value="dr_jefri" label="dr. Jefri, Sp. PD">dr. Jefri, Sp. PD</option>
+                            <option value="dr_stefany_adi" label="dr. Stefany Adi W., Sp.PD - KGH">dr. Stefany Adi W., Sp.PD - KGH</option>
+                            <option value="dr_marlon" label="dr. Marlon, Sp.An TI">dr. Marlon, Sp.An TI</option>
+                            <option value="dr_telly_victorya" label="dr. Telly Victorya Kapitana, Sp.An TI">dr. Telly Victorya Kapitana, Sp.An TI</option>
+                            <option value="dr_samlek_sunbanu" label="dr. Samlek E. Sunbanu, Sp.A">dr. Samlek E. Sunbanu, Sp.A</option>
+                            <option value="dr_simplicia_m" label="Dr. dr. Simplicia M. A., Sp.A (K)">Dr. dr. Simplicia M. A., Sp.A (K)</option>
+                            <option value="dr_tjahyo_s" label="dr. Tjahyo S., SpA">dr. Tjahyo S., SpA</option>
+                            <option value="dr_setijo_halim" label="dr. Setijo Halim, Sp.B">dr. Setijo Halim, Sp.B</option>
+                            <option value="dr_frida_silitonga" label="dr. Frida M. Silitonga, Sp.S">dr. Frida M. Silitonga, Sp.S</option>
+                            <option value="dr_olivia_wijaya" label="dr. Olivia J. Wijaya, Sp.N">dr. Olivia J. Wijaya, Sp.N</option>
+                            <option value="dr_niva_wilujeng" label="dr. Niva Wilujeng, Sp. JP">dr. Niva Wilujeng, Sp. JP</option>
+                            <option value="dr_kristian_ratu" label="dr. Kristian Ratu, Sp.OG">dr. Kristian Ratu, Sp.OG</option>
+                            <option value="dr_trisna_turwewi" label="dr. N. Trisna T. K. Turwewi, Sp. THT- KL">dr. N. Trisna T. K. Turwewi, Sp. THT- KL</option>
+                            <option value="dr_made_tambunan" label="dr. Made P. Tambunan, Sp.U">dr. Made P. Tambunan, Sp.U</option>
+                            <option value="dr_arian_d" label="dr. R. Arian D., Sp.BP-RE">dr. R. Arian D., Sp.BP-RE</option>
+                            <option value="dr_andre_sinambela" label="dr. Andre Tongam Palopor Sinambela, Sp. EM">dr. Andre Tongam Palopor Sinambela, Sp. EM</option>
+                            <option value="drg_ellen_p" label="drg. Ellen S. P., SpBM">drg. Ellen S. P., SpBM</option>
+                            <option value="drg_revina_marpaung" label="drg. Revina Marpaung, SpKG">drg. Revina Marpaung, SpKG</option>
+                        </select>
                         </datalist>
                     </div>
                 </div>
@@ -231,7 +232,7 @@
             </div>
 
             <div class="field">
-                <label class="label">Nama RS:</label>
+                <label class="label">Nama RS Rujukan:</label>
                 <div class="control">
                     <input type="text" class="input" name="nama_rs">
                 </div>
@@ -303,6 +304,39 @@
                         <td><input type="text" class="input" name="nama_antimikroba_2"></td>
                         <td><input type="text" class="input" name="nama_antimikroba_3"></td>
                     </tr>
+                    <tr>
+                        <td>Regimen (Dosis / Cara / Saat / Lama)</td>
+                        <td><input type="text" class="input" name="regimen_1"></td>
+                        <td><input type="text" class="input" name="regimen_2"></td>
+                        <td><input type="text" class="input" name="regimen_3"></td>
+                    </tr>
+                    <tr>
+                        <td>Indikasi</td>
+                        <td>
+                            <label class="indikasi_1">
+                                <input type="radio" name="indikasi_1" value="Profilaksis" id="'indikasi_1" required>Profilaksis
+                            </label>
+                            <label class="indikasi_1">
+                                <input type="radio" name="indikasi_1" value="Terapi" id="'indikasi_1" required>Terapi
+                            </label>
+                        </td>    
+                        <td>
+                            <label class="indikasi_2">
+                                <input type="radio" name="indikasi_2" value="Profilaksis" id="'indikasi_2" required>Profilaksis
+                            </label>
+                            <label class="indikasi_2">
+                                <input type="radio" name="indikasi_2" value="Terapi" id="'indikasi_2" required>Terapi
+                            </label>
+                        </td>    
+                        <td>
+                            <label class="indikasi_3">
+                                <input type="radio" name="indikasi_3" value="Profilaksis" id="'indikasi_3" required>Profilaksis
+                            </label>
+                            <label class="indikasi_3">
+                                <input type="radio" name="indikasi_3" value="Terapi" id="'indikasi_3" required>Terapi
+                            </label>
+                        </td>    
+                    </tr>
                     <!-- Repeat similar rows for other antimicrobials -->
                 </tbody>
             </table>
@@ -323,9 +357,12 @@
                         <input class="checkbox" type="checkbox" name="hasil_kultur" value="Tidak Ada">
                         Tidak Ada
                     </label>
+                    <label class="checkbox">
+                        <input class="checkbox" type="checkbox" name="hasil_kultur" value="Menunggu">
+                        Menunggu
+                    </label>
                 </div>
             </div>
-
             <div class="field">
                 <label class="label">Dikirim tanggal:</label>
                 <div class="control">
@@ -370,6 +407,24 @@
                         <td><input type="date" class="input" name="darah_lengkap_2"></td>
                         <td><input type="date" class="input" name="darah_lengkap_3"></td>
                     </tr>
+                    <tr>
+                        <td>Urine Lengkap</td>
+                        <td><input type="date" class="input" name="urine_lengkap_1"></td>
+                        <td><input type="date" class="input" name="urine_lengkap_2"></td>
+                        <td><input type="date" class="input" name="urine_lengkap_3"></td>
+                    </tr>
+                    <tr>
+                        <td>CRP</td>
+                        <td><input type="date" class="input" name="CRP_lengkap_1"></td>
+                        <td><input type="date" class="input" name="CRP_lengkap_2"></td>
+                        <td><input type="date" class="input" name="CRP_lengkap_3"></td>
+                    </tr>
+                    <tr>
+                        <td>Prokalsitonin</td>
+                        <td><input type="date" class="input" name="prokalsitonin_1"></td>
+                        <td><input type="date" class="input" name="prokalsitonin_2"></td>
+                        <td><input type="date" class="input" name="prokalsitonin_3"></td>
+                    </tr>
                     <!-- Repeat similar rows for other examinations -->
                 </tbody>
             </table>
@@ -389,13 +444,23 @@
                         <td><input type="date" class="input" name="tanggal_radiologi_1"></td>
                         <td><input type="text" class="input" name="hasil_radiologi_1"></td>
                     </tr>
+                    <tr>
+                        <td><input type="text" class="input" name="pemeriksaan_radiologi_2"></td>
+                        <td><input type="date" class="input" name="tanggal_radiologi_2"></td>
+                        <td><input type="text" class="input" name="hasil_radiologi_2"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="input" name="pemeriksaan_radiologi_3"></td>
+                        <td><input type="date" class="input" name="tanggal_radiologi_3"></td>
+                        <td><input type="text" class="input" name="hasil_radiologi_3"></td>
+                    </tr>
                     <!-- Repeat similar rows for other radiological examinations -->
                 </tbody>
             </table>
 
                 <div class="field is-grouped">
                     <div class="control">
-                    <button class="button is-primary" type="submit" id="submit-button" onClick="generatePDF()">
+                    <button class="button is-primary" type="submit" id="submit-button">
                         Submit
                     </button>
                     </div>
@@ -488,6 +553,7 @@
               document.getElementById("message").style.display = "none";
             }, 2600);
           })
+
           .catch(function (error) {
             // Handle errors, you can display an error message here
             console.error(error);
@@ -495,10 +561,9 @@
               "Sudah tersubmit! Mohon di-periksa kembali statusnya";
             document.getElementById("message").style.display = "block";
           });
-      });
-    </script>
+      
+          generatePDF()
 
-<script>
     function generatePDF() {
       const { jsPDF } = window.jspdf;
 
@@ -592,9 +657,9 @@
       // Save the PDF
       doc.save('form.pdf');
     }
-</script>
-  </body>
 
+      });
+    </script>
 <footer class="footer m-0 p-2 pl-4 has-text-centered">
     <p>
         rimba
