@@ -17,399 +17,228 @@
             <a class="center" href="https://ibb.co.com/ZVjH49t"><img src="https://i.ibb.co.com/ZVjH49t/Stempel-PPRA.png" alt="Stempel-PPRA" border="0"></a>
             <br>
             <br>
-            <p class="title is-4">Formulir Evaluasi Persetujuan Antimikroba Golongan <i>Reserve</i>
+            <p class="title is-4">Formulir Evaluasi Permintaan Antimikroba Golongan <i>Reserve</i>
             <p class="subtitle">Rumah Sakit St. Carolus Borromeus - RSCB Kupang</h1></p>
         </div>
       </div>
     </section>
-
     <section class="section">
-      <div class="columns is-centered">
-      <div class="box">
-            <form id="form" class="container m-2 pl-2" method="POST">
-
-                <div class="field">
-                    <label class="label">Nama DPJP:</label>
-                    <div class="control">
-                        <input class="input" type="text" name="nama_dpjp" id="nama_dpjp_input" list="nama_dpjp_options">
-                        <datalist id="nama_dpjp_options">
-                            <option value="dr_danny_darmawan">dr. Danny Darmawan, Sp. PD</option>
-                            <option value="dr_heri_sutrisno">dr. Heri Sutrisno, Sp.PD - KHO</option>
-                            <option value="dr_jefri">dr. Jefri, Sp.PD</option>
-                            <option value="dr_stefany_adi">dr. Stefany Adi W., Sp.PD - KGH</option>
-                            <option value="dr_marlon">dr. Marlon, Sp.An TI</option>
-                            <option value="dr_telly_victorya">dr. Telly Victorya Kapitana, Sp.An TI</option>
-                            <option value="dr_samlek_sunbanu">dr. Samlek E. Sunbanu, Sp.A</option>
-                            <option value="dr_simplicia_m">Dr. dr. Simplicia M. A., Sp.A (K)</option>
-                            <option value="dr_tjahyo_s">dr. Tjahyo S., SpA</option>
-                            <option value="dr_setijo_halim">dr. Setijo Halim, Sp.B</option>
-                            <option value="dr_frida_silitonga">dr. Frida M. Silitonga, Sp.S</option>
-                            <option value="dr_olivia_wijaya">dr. Olivia J. Wijaya, Sp.N</option>
-                            <option value="dr_niva_wilujeng">dr. Niva Wilujeng, Sp. JP</option>
-                            <option value="dr_kristian_ratu">dr. Kristian Ratu, Sp.OG</option>
-                            <option value="dr_trisna_turwewi">dr. N. Trisna T. K. Turwewi, Sp. THT- KL</option>
-                            <option value="dr_made_tambunan">dr. Made P. Tambunan, Sp.U</option>
-                            <option value="dr_arian_d">dr. R. Arian D., Sp.BP-RE</option>
-                            <option value="dr_andre_sinambela">dr. Andre Tongam Palopor Sinambela, Sp. EM</option>
-                            <option value="drg_ellen_p">drg. Ellen S. P., SpBM</option>
-                            <option value="drg_revina_marpaung">drg. Revina Marpaung, SpKG</option>
-                        </datalist>
+        <div class="container">
+            <h1 class="title">Form Penilaian Infeksi</h1>
+            <form>
+                <div class="box">
+                    <h2 class="subtitle">Bagian 1. Apakah ada Infeksi Bakteri?</h2>
+                    <div class="field">
+                        <label class="label">Gejala Klinis</label>
+                        <div class="control">
+                            <label class="checkbox">
+                                <input type="checkbox"> Demam Tinggi
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox"> Sesak Nafas
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox"> Nyeri dada
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox"> Sputum Purulen
+                            </label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Riwayat Klinis</label>
+                        <div class="control">
+                            <label class="checkbox">
+                                <input type="checkbox"> Riwayat infeksi dengan bakteri resisten sebelumnya
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox"> Penggunaan antibiotik dalam 3 bulan terakhir
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox"> Imunokompromis
+                            </label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Pemeriksaan Fisik</label>
+                        <div class="control">
+                            <label class="checkbox">
+                                <input type="checkbox"> Penurunan Kesadaran (GCS 15)
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox"> Paru-paru (Rhonchi)
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox"> Infeksi Subkutan
+                            </label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Hasil Laboratorium</label>
+                        <div class="control">
+                            <label class="checkbox">
+                                <input type="checkbox"> CRP Tinggi (>100 mg/L)
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox"> Procalcitonin Tinggi (> 2 ng/mL)
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox"> Leukositosis (> 15,000/microL)
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox"> Kultur darah positif untuk bakteri resisten
+                            </label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Hasil Radiologi</label>
+                        <div class="control">
+                            <label class="checkbox">
+                                <input type="checkbox"> Foto toraks atau CT scan, apakah terdapat tanda infeksi
+                            </label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Kesimpulan Bagian 1</label>
+                        <div class="control">
+                            <label class="radio">
+                                <input type="radio" name="infeksi_bakteri"> Ya
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="infeksi_bakteri"> Tidak
+                            </label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Kategori</label>
+                        <div class="control">
+                            <label class="radio">
+                                <input type="radio" name="kategori"> Kategori 1
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="kategori"> Kategori 2
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="kategori"> Kategori 3
+                            </label>
+                        </div>
                     </div>
                 </div>
-
-            <div class="field">
-                <label class="label">Nama Pasien:</label>
-                <div class="control">
-                    <input 
-                    type="text" 
-                    class="input" 
-                    name="nama_pasien" 
-                    />
-                </div>
-            </div>
-
-            <div class="field">
-                <label class="label">Ruangan:</label>
-                <div class="control">
-                    <div class="select">
-                        <select name="ruangan" class="input">
-                            <option value="IGD">IGD</option>
-                            <option value="ICU">ICU</option>
-                            <option value="Poli">Poli</option>
-                            <option value="Carolus Tim 1">Carolus Tim 1</option>
-                            <option value="Carolus Tim 2">Carolus Tim 2</option>
-                            <option value="Lukas">Lukas</option>
-                            <option value="Lukas - Isolasi">Lukas - Isolasi</option>
-                        </select>
+                <div class="box">
+                    <h2 class="subtitle">Bagian 2. Dimanakah sumber infeksinya?</h2>
+                    <div class="field">
+                        <label class="label">Sumber Infeksi</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Tuliskan sumber infeksinya">
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="field">
-                <label class="label">No. Rekam Medis:</label>
-                <div class="control">
-                    <input 
-                    type="text" 
-                    class="input" 
-                    name="no_rekam_medis">
+                <div class="box">
+                    <h2 class="subtitle">Bagian 3. Apakah tindakkan antibiotik saat ini sudah adekuat?</h2>
+                    <div class="field">
+                        <label class="label">Source Control</label>
+                        <div class="control">
+                            <label class="checkbox">
+                                <input type="checkbox"> Apakah lokasi merupakan tindakan bedah?
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox"> Apakah source control dapat dilakukan?
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox"> Apakah source control sudah dilakukan?
+                            </label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Pemberian Antibiotik</label>
+                        <div class="control">
+                            <label class="checkbox">
+                                <input type="checkbox"> Apakah hasil kultur tersedia?
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox"> Apakah antibiotik sudah diberikan?
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox"> Apakah antibiotik sesuai dengan guideline:
+                                <br>
+                                1. PPRA
+                                <br>
+                                2. WHO
+                                <br>
+                                3. Kemenkes
+                                <br>
+                                4. Organisasi profesi
+                            </label>
+                            <div class="field">
+                                <label class="label">Tuliskan acuan guideline-nya</label>
+                                <div class="control">
+                                    <input class="input" type="text" placeholder="Guideline">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Kesimpulan Bagian 3</label>
+                        <div class="control">
+                            <label class="radio">
+                                <input type="radio" name="antibiotik_adecuat"> Ya
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="antibiotik_adecuat"> Tidak
+                            </label>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="field">
-                <label class="label">Tanggal Lahir:</label>
-                <div class="control">
-                    <input type="date" class="input" name="tanggal_lahir">
+                <div class="box">
+                    <h2 class="subtitle">Bagian 4. Apakah antibiotik golongan reserve diperlukan?</h2>
+                    <div class="field">
+                        <label class="label">Kriteria Klinis</label>
+                        <div class="control">
+                            <label class="checkbox">
+                                <input type="checkbox"> Apakah pasien sempat mengalami respons terapi dengan antibiotik sebelumnya dan perburukan?
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox"> Apakah pasien mempunyai riwayat penggunaan antimikroba selama 1 bulan terakhir?
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox"> Apakah pasien ada riwayat rawat inap 1 bulan terakhir?
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox"> Apakah pasien hemodinamik tidak stabil?
+                            </label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Kriteria Kultur Darah</label>
+                        <div class="control">
+                            <label class="checkbox">
+                                <input type="checkbox"> Apakah hasil kultur sensitif terhadap antibiotik yang diberikan?
+                            </label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Kesimpulan Bagian 4</label>
+                        <div class="control">
+                            <label class="radio">
+                                <input type="radio" name="antibiotik_reserve"> Ya
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="antibiotik_reserve"> Tidak
+                            </label>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="field">
-                <label class="label">Jenis Kelamin:</label>
-                <div class="control">
-                    <label class="radio">
-                        <input type="radio" name="jenis_kelamin" value="L" required> L
-                    </label>
-                    <label class="radio">
-                        <input type="radio" name="jenis_kelamin" value="P" required> P
-                    </label>
-                </div>
-            </div>
-
-            <div class="field">
-                <label class="label">Berat Badan:</label>
-                <div class="control">
-                    <input 
-                    type="number" 
-                    class="input" 
-                    name="berat_badan" 
-                    step="0.1"
-                    placeholder="Dalam Kg">
-                </div>
-            </div>
-
-            <div class="field">
-                <label class="label">Tanggal MRS:</label>
-                <div class="control">
-                    <input type="date" class="input" name="tanggal_mrs">
-                </div>
-            </div>
-
-            <div class="field">
-                <label class="label">Diagnosis:</label>
-                <div class="control">
-                    <textarea class="textarea" name="diagnosis"></textarea>
-                </div>
-            </div>
-
-            <div class="field">
-                <label class="label">Keadaan Umum:</label>
-                <div class="control">
-                    <input type="text" class="input" name="keadaan_umum">
-                </div>
-            </div>
-
-            <div class="field">
-            <label class="label">Tanda Vital:</label>
-            <table class="table is-bordered is-fullwidth">
-                <thead>
-                    <tr>
-                        <th>Tanda Vital</th>
-                        <th>Pertama</th>
-                        <th>Kemarin</th>
-                        <th>Hari Ini</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Tekanan Darah</td>
-                        <td><input type="text" class="input" name="tekanan_darah_pertama"></td>
-                        <td><input type="text" class="input" name="tekanan_darah_kemarin"></td>
-                        <td><input type="text" class="input" name="tekanan_darah_hari_ini"></td>
-                    </tr>
-
-                    <tr>
-                        <td>Nadi</td>
-                        <td><input type="text" class="input" name="nadi_pertama"></td>
-                        <td><input type="text" class="input" name="nadi_kemarin"></td>
-                        <td><input type="text" class="input" name="nadi_hari_ini"></td>
-                    </tr>
-
-                    <tr>
-                        <td>RR</td>
-                        <td><input type="text" class="input" name="rr_pertama"></td>
-                        <td><input type="text" class="input" name="rr_kemarin"></td>
-                        <td><input type="text" class="input" name="rr_hari_ini"></td>
-                    </tr>
-                
-                    <tr>
-                        <td>Suhu</td>
-                        <td><input type="text" class="input" name="suhu_pertama"></td>
-                        <td><input type="text" class="input" name="suhu_kemarin"></td>
-                        <td><input type="text" class="input" name="suhu_hari_ini"></td>
-                    </tr>
-                </tbody>
-            </table>
-            </div>
-
-            <div class="field">
-                <label class="label">Kondisi saat ini:</label>
-                <div class="control">
-                    <textarea class="textarea" name="kondisi_saat_ini"></textarea>
-                </div>
-            </div>
-
-            <div class="field">
-                <label class="label">Penyakit Penyerta:</label>
-                <div class="control">
-                    <textarea class="textarea" name="penyakit_penyerta"></textarea>
-                </div>
-            </div>
-
-            <div class="field">
-                <label class="label">Pasien Rujukan:</label>
-                <div class="control">
-                    <label class="checkbox">
-                        <input type="checkbox" name="pasien_rujukan" value="Ya">
-                        Ya
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox" name="pasien_rujukan" value="Tidak">
-                        Tidak
-                    </label>
-                </div>
-            </div>
-
-            <div class="field">
-                <label class="label">Nama RS:</label>
-                <div class="control">
-                    <input type="text" class="input" name="nama_rs">
-                </div>
-            </div>
-
-            <div class="field">
-                <label class="label">Riwayat Antimikroba sebelumnya / saat ini:</label>
-                <div class="control">
-                    <label class="checkbox">
-                        <input type="checkbox" name="riwayat_antimikroba" value="Ya">
-                        Ya
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox" name="riwayat_antimikroba" value="Tidak">
-                        Tidak
-                    </label>
-                </div>
-            </div>
-
-            <h4>Antimikroba</h4>
-            <table class="table is-bordered is-fullwidth">
-                <thead>
-                    <tr>
-                        <th>Antimikroba</th>
-                        <th>Keterangan</th>
-                        <th>Stop Tanggal</th>
-                        <th>Lama Pemakaian</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input type="text" class="input" name="antimikroba_1"></td>
-                        <td><input type="text" class="input" name="keterangan_1"></td>
-                        <td><input type="date" class="input" name="stop_tanggal_1"></td>
-                        <td><input type="text" class="input" name="lama_pemakaian_1"></td>
-                    </tr>
-
-                    <tr>
-                        <td><input type="text" class="input" name="antimikroba_2"></td>
-                        <td><input type="text" class="input" name="keterangan_2"></td>
-                        <td><input type="date" class="input" name="stop_tanggal_2"></td>
-                        <td><input type="text" class="input" name="lama_pemakaian_2"></td>
-                    </tr>
-
-                    <tr>
-                        <td><input type="text" class="input" name="antimikroba_3"></td>
-                        <td><input type="text" class="input" name="keterangan_3"></td>
-                        <td><input type="date" class="input" name="stop_tanggal_3"></td>
-                        <td><input type="text" class="input" name="lama_pemakaian_3"></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="field">
-            <label class="label">Permintaan Antimikroba</label>
-            <table class="table is-bordered is-fullwidth">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Antimikroba 1</th>
-                        <th>Antimikroba 2</th>
-                        <th>Antimikroba 3</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Nama Antimikroba</td>
-                        <td><input type="text" class="input" name="nama_antimikroba_1"></td>
-                        <td><input type="text" class="input" name="nama_antimikroba_2"></td>
-                        <td><input type="text" class="input" name="nama_antimikroba_3"></td>
-                    </tr>
-                    <!-- Repeat similar rows for other antimicrobials -->
-                </tbody>
-            </table>
-            </div>
-
-            <!-- Continue replacing remaining fields with Bulma classes as needed -->
-
-
-            <h4>Laboratorium Mikrobiologi saat ini</h4>
-            <div class="field">
-                <label class="label">Hasil Kultur:</label>
-                <div class="control">
-                    <label class="checkbox">
-                        <input class="checkbox" type="checkbox" name="hasil_kultur" value="Ada">
-                        Ada, lampirkan copy hasil kultur
-                    </label>
-                    <label class="checkbox">
-                        <input class="checkbox" type="checkbox" name="hasil_kultur" value="Tidak Ada">
-                        Tidak Ada
-                    </label>
-                </div>
-            </div>
-
-            <div class="field">
-                <label class="label">Dikirim tanggal:</label>
-                <div class="control">
-                    <input type="date" class="input" name="dikirim_tanggal">
-                </div>
-            </div>
-
-            <table class="table is-bordered is-fullwidth">
-                <thead>
-                    <tr>
-                        <th>Tanggal Kultur</th>
-                        <th>Spesimen</th>
-                        <th>Hasil</th>
-                        <th>Resisten / Intermediate / Sensitif</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input type="date" class="input" name="tanggal_kultur_1"></td>
-                        <td><input type="text" class="input" name="spesimen_1"></td>
-                        <td><input type="text" class="input" name="hasil_1"></td>
-                        <td><input type="text" class="input" name="ris_1"></td>
-                    </tr>
-                    <!-- Repeat similar rows for other samples -->
-                </tbody>
-            </table>
-
-            <h4>Hasil Laboratorium</h4>
-            <table class="table is-bordered is-fullwidth">
-                <thead>
-                    <tr>
-                        <th>Pemeriksaan</th>
-                        <th>Tanggal</th>
-                        <th>Tanggal</th>
-                        <th>Tanggal</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Darah Lengkap</td>
-                        <td><input type="date" class="input" name="darah_lengkap_1"></td>
-                        <td><input type="date" class="input" name="darah_lengkap_2"></td>
-                        <td><input type="date" class="input" name="darah_lengkap_3"></td>
-                    </tr>
-                    <!-- Repeat similar rows for other examinations -->
-                </tbody>
-            </table>
-
-            <h4>Hasil Pemeriksaan Radiologi / Penunjang lain</h4>
-            <table class="table is-bordered is-fullwidth">
-                <thead>
-                    <tr>
-                        <th>Pemeriksaan</th>
-                        <th>Tanggal</th>
-                        <th>Hasil</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input type="text" class="input" name="pemeriksaan_radiologi_1"></td>
-                        <td><input type="date" class="input" name="tanggal_radiologi_1"></td>
-                        <td><input type="text" class="input" name="hasil_radiologi_1"></td>
-                    </tr>
-                    <!-- Repeat similar rows for other radiological examinations -->
-                </tbody>
-            </table>
-
                 <div class="field is-grouped">
                     <div class="control">
-                    <button class="button is-primary" type="submit" id="submit-button">
-                        Submit
-                    </button>
+                        <button class="button is-link">Submit</button>
+                    </div>
+                    <div class="control">
+                        <button class="button is-link is-light">Cancel</button>
                     </div>
                 </div>
-                </form>
-                <div
-                id="message"
-                style="
-                    display: none;
-                    margin: 20px;
-                    font-weight: bold;
-                    color: green;
-                    padding: 8px;
-                    background-color: beige;
-                    border-radius: 4px;
-                    border-color: aquamarine;
-                "
-                ></div>
-
-            </div>
             </form>
-      </div>
-      </div>
-    </div>
+        </div>
     </section>
-
     
     <script>
 
