@@ -326,7 +326,7 @@
                                 <option value="QID">Four Times Daily (4x1)</option>
                             </select>   
                         </td>
-                        <td><input type="number" class="input" name="riw_antimikroba_2_durasi" placeholder="dalam hari"></td>
+                        <td><input type="number" class="input" name="riw_antimikroba_2_durasi" id="id_riw_antimikroba_2_durasi" placeholder="dalam hari"></td>
                     </tr>
 
                     <tr>
@@ -428,7 +428,7 @@
             <div class="field">
                 <label class="label">Tanggal Pengambilan Kultur:</label>
                 <div class="control">
-                    <input type="date" class="input" name="kultur_tanggal" name="id_kultur_tanggal">
+                    <input type="date" class="input" name="kultur_tanggal" name="id_kultur_tanggal" id="id_kultur_tanggal">
                 </div>
             </div>
 
@@ -525,14 +525,13 @@
                         <td><textarea class="textarea" name="radiologi_1_hasil" id="id_radiologi_1_hasil"></textarea>
                     </tr>
                     <tr>
-                        <td><input type="text" class="input" name="radiologi_2_pemeriksaan"></td>
-                        <td><input type="date" class="input" name="radiologi_2_tanggal"></td>
-                        <td><textarea class="textarea" name="radiologi_2_hasil"></textarea>
+                        <td><input type="text" class="input" name="radiologi_2_pemeriksaan" id="id_radiologi_2_pemeriksaan"></td>
+                        <td><input type="date" class="input" name="radiologi_2_tanggal" id="id_radiologi_2_tanggal"></td>
+                        <td><textarea class="textarea" name="radiologi_2_hasil" id="id_radiologi_2_hasil"></textarea>
                     </tr>
                     <!-- Repeat similar rows for other radiological examinations -->
                 </tbody>
             </table>
-
 
                 <div class="field is-grouped">
                     <div class="control">
@@ -636,7 +635,7 @@
 
           generatePDF()
 
-          function generatePDF() {
+    function generatePDF() {
       const { jsPDF } = window.jspdf;
 
       // Initialize jsPDF
