@@ -636,15 +636,15 @@
 
           generatePDF()
 
-    function generatePDF() {
+          function generatePDF() {
       const { jsPDF } = window.jspdf;
 
       // Initialize jsPDF
       const doc = new jsPDF();
 
       // Collect form data specifically for namaDPJP
-      const sel = document.getElementById('id_nama_dpjp');
-      const id_nama_dpjp = sel.value;
+        const sel = document.getElementById('id_nama_dpjp');
+        const id_nama_dpjp = sel.value;
 
       // Collect form data
       const id_nama_pasien = document.getElementById("id_nama_pasien").value;
@@ -670,6 +670,58 @@
         const id_suhu_masuk = document.getElementById("id_suhu_masuk").value;
         const id_suhu_sekarang = document.getElementById("id_suhu_sekarang").value;
         const id_pemeriksaan_fisik = document.getElementById("id_pemeriksaan_fisik").value;
+        const id_pasien_rujukan = document.querySelector('input[name="pasien_rujukan"]:checked').value;
+        const id_nama_rs_rujukan = document.getElementById("id_nama_rs_rujukan").value;
+        const id_riwayat_antimikroba = document.querySelector('input[name="riwayat_antimikroba"]:checked').value;
+        const id_riw_antimikroba_1_nama = document.getElementById("id_riw_antimikroba_1_nama").value;
+        const id_riw_antimikroba_1_tanggal = document.getElementById("id_riw_antimikroba_1_tanggal").value;
+        const id_riw_antimikroba_1_dosis = document.getElementById("id_riw_antimikroba_1_dosis").value;
+        const id_riw_antimikroba_1_per_hari = document.getElementById("riw_antimikroba_1_per_hari").value;
+        const id_riw_antimikroba_1_durasi = document.getElementById("id_riw_antimikroba_1_durasi").value;
+        const id_riw_antimikroba_2_nama = document.getElementById("id_riw_antimikroba_2_nama").value;
+        const id_riw_antimikroba_2_tanggal = document.getElementById("id_riw_antimikroba_2_tanggal").value;
+        const id_riw_antimikroba_2_dosis = document.getElementById("id_riw_antimikroba_2_dosis").value;
+        const id_riw_antimikroba_2_per_hari = document.getElementById("riw_antimikroba_2_per_hari").value;
+        const id_riw_antimikroba_2_durasi = document.getElementById("id_riw_antimikroba_2_durasi").value;
+        const id_riw_antimikroba_3_nama = document.getElementById("id_riw_antimikroba_3_nama").value;
+        const id_riw_antimikroba_3_tanggal = document.getElementById("id_riw_antimikroba_3_tanggal").value;
+        const id_riw_antimikroba_3_dosis = document.getElementById("id_riw_antimikroba_3_dosis").value;
+        const id_riw_antimikroba_3_per_hari = document.getElementById("riw_antimikroba_3_per_hari").value;
+        const id_riw_antimikroba_3_durasi = document.getElementById("id_riw_antimikroba_3_durasi").value;
+        const id_permintaan_antimikroba_1_nama = document.getElementById("id_permintaan_antimikroba_1_nama").value;
+        const id_permintaan_antimikroba_dosis_1 = document.getElementById("id_permintaan_antimikroba_dosis_1").value;
+        const id_permintaan_antimikroba_hari_1 = document.getElementById("id_permintaan_antimikroba_hari_1").value;
+        const id_permintaan_antimikroba_1_durasi = document.getElementById("id_permintaan_antimikroba_1_durasi").value;
+        const id_permintaan_antimikroba_1_indikasi = document.querySelector('input[name="permintaan_antimikroba_1_indikasi"]:checked').value;
+        const id_kultur_ada = document.querySelector('input[name="kultur_ada"]:checked').value;
+        const id_kultur_tanggal = document.getElementById("id_kultur_tanggal").value;
+        const id_kultur_hasil_tanggal = document.getElementById("id_kultur_hasil_tanggal").value;
+        const id_kultur_hasil_spesimen = document.getElementById("id_kultur_hasil_spesimen").value;
+        const id_kultur_hasil_akhir = document.getElementById("id_kultur_hasil_akhir").value;
+        const id_kultur_hasil_resistensi = document.getElementById("id_kultur_hasil_resistensi").value;
+        const id_darah_lengkap_ada = document.querySelector('input[name="darah_lengkap_ada"]:checked').value;
+        const id_darah_lengkap_tanggal = document.getElementById("id_darah_lengkap_tanggal").value;
+        const id_darah_lengkap_hasil = document.getElementById("id_darah_lengkap_hasil").value;
+        const id_urine_lengkap_ada = document.querySelector('input[name="urine_lengkap_ada"]:checked').value;
+        const id_urine_lengkap_tanggal = document.getElementById("id_urine_lengkap_tanggal").value;
+        const id_urine_lengkap_hasil = document.getElementById("id_urine_lengkap_hasil").value;
+        const id_crp_ada = document.querySelector('input[name="crp_ada"]:checked').value;
+        const id_crp_tanggal = document.getElementById("id_crp_tanggal").value;
+        const id_crp_hasil = document.getElementById("id_crp_hasil").value;
+        const id_prokalsitonin_ada = document.querySelector('input[name="prokalsitonin_ada"]:checked').value;
+        const id_prokalsitonin_tanggal = document.getElementById("id_prokalsitonin_tanggal").value;
+        const id_prokalsitonin_hasil = document.getElementById("id_prokalsitonin_hasil").value;
+        const id_radiologi_1_pemeriksaan = document.getElementById("id_radiologi_1_pemeriksaan").value;
+        const id_radiologi_1_tanggal = document.getElementById("id_radiologi_1_tanggal").value;
+        const id_radiologi_1_hasil = document.getElementById("id_radiologi_1_hasil").value;
+        const id_radiologi_2_pemeriksaan = document.getElementById("id_radiologi_2_pemeriksaan").value;
+        const id_radiologi_2_tanggal = document.getElementById("id_radiologi_2_tanggal").value;
+        const id_radiologi_2_hasil = document.getElementById("id_radiologi_2_hasil").value;
+
+
+
+
+
 
 
       // Add header image (replace with your image URL)
@@ -677,6 +729,8 @@
       const imgWidth = 25; // Adjust the width
       const imgHeight = 25; // Adjust the height
       doc.addImage(imgUrl, 'PNG', 25, 20, imgWidth, imgHeight);
+
+      // Add header text
       doc.setFontSize(12);
       doc.text("YAYASAN ELISABETH GRUYTERS", 60, 25);
       doc.text("RUMAH SAKIT ST. CAROLUS BORROMEUS", 60, 30);
@@ -724,18 +778,81 @@
       const tableEndPos = doc.lastAutoTable.finalY;
       doc.text(`Pemeriksaan Fisik : ${id_pemeriksaan_fisik}`, 20, tableEndPos + 10);
 
-      // Add checkbox and table section
-      doc.text("Pasien Rujukan : Ya    Tidak    Nama RS :", 20, tableEndPos + 90);
-      doc.text("Riwayat Antimikroba sebelumnya / saat ini : Ya    Tidak", 20, tableEndPos + 100);
+      doc.addPage()
+      y = 0
 
-      // Add table for antimicrobial details
+      doc.text(`Pasien rujukan : ${id_pasien_rujukan}`, 20, 30);
+      doc.text(`Nama RS Rujukan : ${id_nama_rs_rujukan}`, 110, 30);
+
+      doc.text("Riwayat Antimikroba Sebelumnya:", 20, 40)
       doc.autoTable({
-        startY: tableEndPos + 110,
-        head: [['Antimikroba', 'Keterangan', 'Lanjut / Stop', 'Stop Tanggal', 'Lama Pemakaian']],
+        startY:45,
+        head: [['Antimikroba Sebelumnya', 'Tanggal Pertama Pemberian', 'Dosis Per Pemberian', 'Pemberian Per Hari', 'Durasi Pemberian']],
         body: [
-          ['1. Jenis Antimikroba', '', '', '', ''],
-          ['2. Jenis Antimikroba', '', '', '', ''],
-          ['3. Jenis Antimikroba', '', '', '', '']
+        [id_riw_antimikroba_1_nama, id_riw_antimikroba_1_tanggal, id_riw_antimikroba_1_dosis, id_riw_antimikroba_1_per_hari, id_riw_antimikroba_1_durasi],  
+        [id_riw_antimikroba_2_nama, id_riw_antimikroba_2_tanggal, id_riw_antimikroba_2_dosis, id_riw_antimikroba_2_per_hari, id_riw_antimikroba_2_durasi],
+        [id_riw_antimikroba_3_nama, id_riw_antimikroba_3_tanggal, id_riw_antimikroba_3_dosis, id_riw_antimikroba_3_per_hari, id_riw_antimikroba_3_durasi],
+        ],
+        theme: 'grid',
+        styles: { fontSize: 12 }
+      });
+
+      const tableEndPos2 = doc.lastAutoTable.finalY;
+      doc.text("Permintaan Antimikroba:", 20, tableEndPos2 + 10);
+      doc.text(`Nama Antimikroba          : ${id_permintaan_antimikroba_1_nama}`, 20, tableEndPos2 + 20);
+      doc.text(`Dosis Per Pemberian       : ${id_permintaan_antimikroba_dosis_1}`, 20, tableEndPos2 + 30);
+      doc.text(`Pemberian Per Hari        : ${id_permintaan_antimikroba_hari_1}`, 20, tableEndPos2 + 40);
+      doc.text(`Perkiraan Durasi Pemberian: ${id_permintaan_antimikroba_1_durasi}`, 20, tableEndPos2 + 50);
+      doc.text(`Indikasi                  : ${id_permintaan_antimikroba_1_indikasi}`, 20, tableEndPos2 + 60);
+
+      doc.line(20, tableEndPos2 + 70, 200, tableEndPos2 + 70);
+
+      doc.text("Hasil Penunjang:", 20, tableEndPos2 + 80)
+      doc.text(`Hasil Kultur: ${id_kultur_ada}`, 20, tableEndPos2 +  90)
+      doc.text(`Tanggal Pengambilan Kultur: ${id_kultur_ada}`, 100, tableEndPos2 + 90)
+
+      doc.text("Hasil Pengambilan Kultur:", 100, tableEndPos2 + 100)
+
+      doc.autoTable({
+        startY: tableEndPos2 + 110,
+        head: [['Tanggal Kultur', 'Spesimen', 'Hasil', 'Resistensi']],
+        body: [
+        [id_kultur_hasil_tanggal, id_kultur_hasil_spesimen, id_kultur_hasil_akhir, id_kultur_hasil_resistensi],  
+        ],
+        theme: 'grid',
+        styles: { fontSize: 12 }
+      });
+
+      doc.addPage()
+      y = 0
+
+      doc.text("Hasil Laboratorium", 20, 30)
+
+      doc.autoTable({
+        startY:35,
+        head: [['Pemeriksaan', 'Ada?', 'Tanggal', 'Hasil']],
+        body: [
+        ["Darah Lengkap", id_darah_lengkap_ada, id_darah_lengkap_tanggal, id_darah_lengkap_hasil],  
+        ["Urine Lengkap", id_urine_lengkap_ada, id_urine_lengkap_tanggal, id_urine_lengkap_hasil],  
+        ["CRP", id_crp_ada, id_crp_tanggal, id_crp_hasil],  
+        ["Prokalsitonin", id_prokalsitonin_ada, id_prokalsitonin_tanggal, id_prokalsitonin_hasil],  
+        ],
+        theme: 'grid',
+        styles: { fontSize: 12 }
+      });
+
+      const tableEndPos3 = doc.lastAutoTable.finalY;
+      doc.line(20, tableEndPos3 + 15, 200, tableEndPos2 + 15);
+
+
+
+      doc.text("Hasil Pemeriksaan Radiologi:", 25, tableEndPos3 + 25)
+      doc.autoTable({
+        startY: tableEndPos3 + 30,
+        head: [['Pemeriksaan', 'Tanggal', 'Hasil']],
+        body: [
+        [id_radiologi_1_pemeriksaan, id_radiologi_1_tanggal, id_radiologi_1_hasil],  
+        [id_radiologi_2_pemeriksaan, id_radiologi_2_tanggal, id_radiologi_2_hasil],
         ],
         theme: 'grid',
         styles: { fontSize: 12 }
@@ -743,7 +860,7 @@
 
       // Save the PDF
       
-      const fileName = `${id_no_rekam_medis} ${id_nama_pasien} - Formulir Permintaan Antimikroba Reserve.pdf`;
+    const fileName = `${id_no_rekam_medis} ${id_nama_pasien} - Formulir Permintaan Antimikroba Reserve.pdf`;
     doc.save(fileName);
     }
 
